@@ -1,0 +1,36 @@
+<!--pages/register/register.wxml-->
+<view class="main">
+
+  <view class="image">
+<image class="image" src="/pages/icon/environment.png" mode="widthFix">
+</image>
+</view>
+
+<view class="title-first">
+<text class="text">足迹</text>
+</view>
+
+<view class="title-second">
+<text class="text">记录美好生活</text>
+</view>
+
+<view class="input-first">
+    <input bindinput="getPhoneNumber" type="number" class="inputText" placeholder="    手机号" placeholder-class="pl-class" />
+</view>
+
+<view class="input-second">
+    <input bindinput="getPassword" type="password" class="inputText" placeholder="    请输入密码" placeholder-class="pl-class" />
+</view>
+
+<view class="input-third">
+    <input bindinput="getPasswordAgain" class="inputText" password="{{true}}" placeholder="    请输入确认密码" placeholder-class="pl-class" />
+</view>
+
+<view class="button-first">
+    <button bindtap="register" style="width:94%;" >注册</button>
+</view>
+
+<view class="button-second">
+    <button bindtap="goToLogin" style="width:50%;">已有帐号，点我登陆</button>
+</view>
+</view>
