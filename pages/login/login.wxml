@@ -14,6 +14,10 @@
 <text class="text">记录美好生活</text>
 </view>
 
+<view class="input">
+    <input class="inputText" placeholder="    请输入用户名" bindinput="userNameInput" placeholder-class="pl-class" />
+  </view>
+
   <view class="input-first">
     <input class="inputText" placeholder="    请输入手机号" bindinput="phoneNumberInput" placeholder-class="pl-class" />
   </view>
