@@ -1,0 +1,32 @@
+<!--pages/login/login.wxml-->
+<view class="main">
+
+<view class="image">
+<image class="image" src="/pages/icon/environment.png" mode="widthFix">
+</image>
+</view>
+
+<view class="title-first">
+<text class="text">足迹</text>
+</view>
+
+<view class="title-second">
+<text class="text">记录美好生活</text>
+</view>
+
+  <view class="input-first">
+    <input class="inputText" placeholder="    请输入手机号" bindinput="phoneNumberInput" placeholder-class="pl-class" />
+  </view>
+
+  <view class="input-second">
+    <input class="inputText" placeholder="    请输入密码" bindinput="passwordInput" placeholder-class="pl-class" />
+  </view>
+
+  <view class="button-first">
+    <button bindtap="login" style="width:100%;">登录</button>
+  </view>
+
+  <view class="button-second">
+    <button bindtap="register" style="width:50%">还没有账号？点我注册</button>
+  </view>
+</view>

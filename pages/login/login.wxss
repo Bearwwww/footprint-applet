@@ -1,0 +1,80 @@
+/* pages/login/login.wxss */
+.main {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+  height: 100%;
+}
+
+.image{
+  width: 33%;
+  padding-top: 50rpx;
+  align-items: center;
+  text-align: center;
+}
+
+.title-first {
+  width: 100%;
+  padding-top: 10rpx;
+  align-items: center;
+  text-align: center;
+  color: rgb(97, 97, 97);
+  font-weight: bold;
+  font-size: 60rpx;
+}
+
+.title-second{
+  width: 100%;
+  padding-top: 30rpx;
+  align-items: center;
+  text-align: center;
+  color: rgb(117, 115, 115);
+  font-weight: bold;
+  font-size: 35rpx;
+}
+
+.input-first {
+  width: 92%;
+  padding-top: 80rpx;
+  padding-bottom: 50rpx;
+}
+
+.input-second {
+  padding-bottom: 80rpx;
+  width: 92%;
+}
+
+.inputText {
+  background-color: rgb(242, 242, 242);
+  width: 100%;
+  height: 80rpx;
+}
+
+.pl-class {
+  font-size: 30rpx;
+}
+
+.button-first {
+  width: 92%;
+}
+
+.button-first button {
+  border-radius: 0;
+  background-color: rgb(247, 105, 104);
+  color: white;
+  font-weight: 400;
+}
+
+.button-second {
+  padding-top: 30rpx;
+  width: 100%;
+}
+
+.button-second button {
+  border-radius: 0;
+  font-size: 25rpx;
+  font-weight: 400;
+  color: rgb(70, 69, 69);
+  background-color: white;
+}
