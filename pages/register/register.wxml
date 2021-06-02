@@ -1,6 +1,5 @@
 <!--pages/register/register.wxml-->
 <view class="main">
-
   <view class="image">
 <image class="image" src="/pages/icon/environment.png" mode="widthFix">
 </image>
@@ -28,6 +27,18 @@
 
 <view class="input-third">
     <input bindinput="getPasswordAgain" class="inputText" password="{{true}}" placeholder="    请输入确认密码" placeholder-class="pl-class" />
+</view>
+
+<view class="segmentation">
+<view class="input-fourth">
+    <input bindinput="getVerificationCode" class="inputText"
+    placeholder="    请输入验证码" placeholder-class="pl-class" />
+</view>
+
+<view class="segmentation-image">
+        <image class="image1"  src=""></image>
+        <!--照片路径-->
+</view>
 </view>
 
 <view class="button-first">
