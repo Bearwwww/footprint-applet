@@ -1,0 +1,15 @@
+<!--pages/bottom_menu/bottom_menu.wxml-->
+<view class="menu">
+
+  <view class="left-bottom">
+    <text bindtap="goToHomePage">主页</text>
+  </view>
+
+  <view class="center">
+    <image bindtap="goToPublish" src="/Image/icon/plussquare.png"></image>
+  </view>
+
+  <view class="right-bottom">
+    <text bindtap="goToMine">个人中心</text>
+  </view>
+</view>
