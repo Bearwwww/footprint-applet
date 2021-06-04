@@ -1,7 +1,7 @@
 <!--pages/register/register.wxml-->
 <view class="main">
   <view class="image">
-<image class="image" src="/pages/icon/environment.png" mode="widthFix">
+<image class="image" src="/Image/icon/environment.png" mode="widthFix">
 </image>
 </view>
 
@@ -36,7 +36,7 @@
 </view>
 
 <view class="segmentation-image">
-        <image class="image1"  src=""></image>
+        <image class="image1"  src="{{}}"></image>
         <!--照片路径-->
 </view>
 </view>

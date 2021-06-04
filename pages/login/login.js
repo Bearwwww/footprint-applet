@@ -6,12 +6,13 @@ Page({
    * 页面的初始数据
    */
   data: {
+    userName:'',
     phoneNumber: '',
     password: ''
   },
 
     //获取用户的用户名
-  getPasswordInpout: function (e) {
+  getUserName: function (e) {
     this.setData({
       userName: e.detail.value
     })
@@ -25,7 +26,7 @@ Page({
   },
 
   //获取密码
-  getPasswordInpout: function (e) {
+  getPassword: function (e) {
     this.setData({
       password: e.detail.value
     })
