@@ -11,6 +11,9 @@
 *.gch
 *.pch
 
+node_modules/
+miniprogram_npm/
+
 # Compiled Dynamic libraries
 *.so
 *.dylib
