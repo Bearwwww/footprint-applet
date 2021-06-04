@@ -96,6 +96,7 @@ page {
   flex-direction: row;
   justify-content: center;
   margin-top: 40rpx;
+  margin-bottom: 100rpx;
   overflow: hidden;
 }
 
