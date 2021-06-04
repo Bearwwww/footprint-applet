@@ -5,10 +5,12 @@ Page({
    * 页面的初始数据
    */
   data: {
-    userInfoList: [{
+    userInfo: {
       pic: "/Image/icon/bear.jpg",
-      username: "一只熊w"
-    }],
+      username: "一只熊w",
+      location:"上海",
+      gender: 1
+    },
 
 
     leftList: [{
@@ -107,6 +109,13 @@ Page({
   goToMine: function () {
 
   },
+
+  goToDetailPage: function () {
+    wx.navigateTo({
+      url: '/pages/detailpage/detailpage',
+    })
+  },
+
   /**
    * 生命周期函数--监听页面加载
    */
