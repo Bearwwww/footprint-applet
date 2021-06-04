@@ -14,14 +14,11 @@
   width: 100%;
   height: 5rpx;
   background-color: #ececd9;
-
-
 }
 .loveNumber{
   display: flex;
   flex-direction: row;
 }
-
 .love{
   width:50rpx;
   height:50rpx;
