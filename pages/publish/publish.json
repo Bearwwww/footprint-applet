@@ -1,0 +1,7 @@
+{
+  "usingComponents": {
+    "l-imagePicker":"/miniprogram_npm/lin-ui/image-picker/index"
+  },
+  "navigationBarTitleText": "发布",
+  "navigationBarBackgroundColor": "#F8F8F8"
+}

@@ -1,0 +1,110 @@
+/* pages/publish/publish.wxss */
+
+page {
+  width: 100%;
+  margin: 0;
+  background: white;
+}
+
+.publish{
+  display: flex;
+  flex-direction: column;
+}
+
+.num_title{
+  margin-left: 30rpx;
+  font-size: 30rpx;
+}
+
+.title-wrap{
+  width: 100%;
+  height: 100rpx;
+  padding-left: 30rpx;
+  font-size: 40rpx;
+  font-weight: 500;
+  color: rgb(107, 106, 106);
+}
+
+.comments {
+  width: 93%;
+  margin-top: 50rpx;
+  margin-left: 30rpx;
+  font-size: 30rpx;
+}
+
+.articles-wrap {
+  width: 100%;
+  height: 340rpx;
+}
+
+.num_comments {
+  width: 100%;
+  height: 40rpx;
+}
+
+.contrast {
+  width: 140rpx;
+  height: 40rpx;
+  float: right;
+  margin-right: 30rpx;
+  background: #eee;
+  font-size: 24rpx;
+  color: #ccc;
+  text-align: center;
+  line-height: 40rpx;
+  border-radius: 20rpx;
+}
+
+.station {
+  width: 100%;
+  height: 6rpx;
+  background: #eee;
+  margin-top: 20rpx;
+}
+
+.img {
+  width: 100%;
+  height: 200rpx;
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: center;
+  margin-top: 35rpx;
+  margin-left: 25rpx;
+}
+
+.image-picker {
+  width: 500rpx;
+  height: 180rpx;
+  border-radius: 8rpx;
+}
+
+.image-picker-item{
+  width: 33.3%;
+  height: 33.3%;
+}
+
+.prompt {
+  font-size: 27rpx;
+  color: #646464;
+  padding-left: 30rpx;
+  margin-top: 30rpx
+}
+
+.color_red {
+  color: red
+}
+
+.submit {
+  width: 600rpx;
+  height: 80rpx;
+  border-radius: 20rpx;
+  background: #419ce2;
+  text-align: center;
+  line-height: 80rpx;
+  color: #fff;
+  font-size: 43rpx;
+  margin-left: 75rpx;
+  margin-top: 80rpx;
+  margin-bottom: 80rpx;
+}
