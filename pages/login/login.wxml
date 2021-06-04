@@ -15,15 +15,15 @@
 </view>
 
 <view class="input">
-    <input class="inputText" placeholder="    请输入用户名" bindinput="getUserName" placeholder-class="pl-class" />
+    <input class="inputText" placeholder="请输入用户名" bindinput="getUserName" placeholder-class="pl-class" />
   </view>
 
   <view class="input-first">
-    <input class="inputText" placeholder="    请输入手机号" bindinput="getPhoneNumber" placeholder-class="pl-class" />
+    <input class="inputText" placeholder="请输入手机号" bindinput="getPhoneNumber" placeholder-class="pl-class" />
   </view>
 
   <view class="input-second">
-    <input class="inputText" placeholder="    请输入密码" bindinput="getPassword" placeholder-class="pl-class" />
+    <input class="inputText" placeholder="请输入密码" bindinput="getPassword" placeholder-class="pl-class" />
   </view>
 
   <view class="button-first">
