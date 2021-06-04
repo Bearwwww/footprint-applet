@@ -14,25 +14,25 @@
 </view>
 
 <view class="input">
-    <input bindinput="getUserName" type="name" class="inputText" placeholder="    用户名" placeholder-class="pl-class" />
+    <input bindinput="getUserName" type="name" class="inputText" placeholder="用户名" placeholder-class="pl-class" />
 </view>
 
 <view class="input-first">
-    <input bindinput="getPhoneNumber" type="number" class="inputText" placeholder="    手机号" placeholder-class="pl-class" />
+    <input bindinput="getPhoneNumber" type="number" class="inputText" placeholder="手机号" placeholder-class="pl-class" />
 </view>
 
 <view class="input-second">
-    <input bindinput="getPassword" type="password" class="inputText" placeholder="    请输入密码" placeholder-class="pl-class" />
+    <input bindinput="getPassword" type="password" class="inputText" placeholder="请输入密码" placeholder-class="pl-class" />
 </view>
 
 <view class="input-third">
-    <input bindinput="getPasswordAgain" class="inputText" password="{{true}}" placeholder="    请输入确认密码" placeholder-class="pl-class" />
+    <input bindinput="getPasswordAgain" class="inputText" password="{{true}}" placeholder="请输入确认密码" placeholder-class="pl-class" />
 </view>
 
 <view class="segmentation">
 <view class="input-fourth">
     <input bindinput="getVerificationCode" class="inputText"
-    placeholder="    请输入验证码" placeholder-class="pl-class" />
+    placeholder="请输入验证码" placeholder-class="pl-class" />
 </view>
 
 <view class="segmentation-image">

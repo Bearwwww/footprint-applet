@@ -84,8 +84,9 @@
 
 .inputText {
   background-color: rgb(242, 242, 242);
-  width: 100%;
+  width: 92%;
   height: 80rpx;
+  padding-left: 40rpx;
 }
 
 .button-first {
