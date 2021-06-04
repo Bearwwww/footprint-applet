@@ -1,12 +1,10 @@
 <!--pages/bottom_love/bottom_love.wxml-->
 <view class="love-box">
-  <!-- <view class="divLine"></view> -->
 
   <view class="loveNumber">
-      <image class="love" src="{{item.loves==true?'/Image/icon/redHeart.png':'/Image/icon/heart.png'}}" bindtap='lovebottom' data-index='{{index}}'></image>
-      <view class="numbers">
-        <text>{{number}}</text>
-      </view>
+      <image class="love" src="{{item.love==true?'/Image/icon/redHeart.png':'/Image/icon/heart.png'}}" bindtap='lovebottom' data-index='{{index}}'></image>
+        <text class="number">{{loveNumber.number}}</text>
   </view>
+
 </view>
 

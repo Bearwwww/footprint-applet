@@ -5,25 +5,27 @@ Page({
    * 页面的初始数据
    */
   data: {
+    loveNumber:{
       love:false,
-      numbers:'13'
+      number:"13"
+    }
       
   },
 
   lovebottom:function(e){
     console.log("love function");
     console.log(e);
-    var loveNew = this.data.loves;
+    var loveNew = this.data.love;
 
-    if (loveNew[e.target.dataset.index].loves == true){
-      loveNew[e.target.dataset.index].loves = false;
-      loveNew[e.target.dataset.index].numbers--;
+    if (loveNew[e.target.dataset.index].love == true){
+      loveNew[e.target.dataset.index].love = false;
+      loveNew[e.target.dataset.index].number--;
     }else{
-      loveNew[e.target.dataset.index].loves = true;
-      loveNew[e.target.dataset.index].numbers++;
+      loveNew[e.target.dataset.index].love = true;
+      loveNew[e.target.dataset.index].number++;
     }
     this.setData({
-      loves:loveNew
+      love:loveNew
     }) 
   },
 
