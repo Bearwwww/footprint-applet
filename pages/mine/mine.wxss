@@ -1,0 +1,129 @@
+/* pages/mine/mine.wxss */
+@import"/pages/bottom_menu/bottom_menu.wxss";
+
+page{
+  width: 100%;
+  margin: 0;
+  background: white;
+}
+
+.userInfo{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  overflow: hidden;
+}
+
+.userinfo-all{
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+
+.userInfo-avatar{
+  background-color: white;
+    width: 100%;
+    padding-top: 50rpx;
+    padding-left: 120rpx;
+    display: flex;
+    flex-direction: row;
+}
+
+.border{
+  width: 180rpx;
+  height: 180rpx;
+  border: solid rgb(217,217,217) 3rpx;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  padding: 5rpx;
+  border-radius: 10rpx;
+}
+
+.border image{
+  width: 170rpx;
+  height: 170rpx;
+}
+
+.userInfo-name{
+  color: #3f3f3f;
+  font-size: 30rpx;
+  width: 320rpx;
+  height: 120rpx;
+  line-height: 130rpx;
+  padding-top: 45rpx;
+  padding-right: 200rpx;
+}
+
+.content{
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  margin-top: 40rpx;
+  overflow: hidden;
+}
+.left{
+  width: 50%;
+  margin-left: 20rpx;
+}
+.right{
+  width: 50%;
+  margin-left: 10rpx;
+  margin-right: 10rpx;
+}
+.pic{
+  border-radius: 10rpx;
+  width: 100%;
+}
+
+/* 上边 | 右边 | 下边 | 左边 
+ padding 2 50 20 0
+ 上边 | 左边右边 | 下边
+*/
+.title-wrap{
+  padding: 5rpx 20rpx 0rpx 10rpx;
+  font-size: 25rpx;
+  font-weight: 500;
+  color: #5f5f5f;
+  overflow: hidden;
+  display: -webkit-box;
+  text-overflow: ellipsis;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+}
+.portrait{
+  width:50rpx;
+  height: 50rpx;
+  margin-left: 10rpx;
+  border-radius: 50%;
+}
+.name-wrap{
+  font-size: 25rpx;
+  color: #727272;
+  font-weight: 500;
+  margin-left: 10rpx;
+  letter-spacing: 3rpx;
+}
+.loveNumber{
+  color: #333;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+.love{
+  width: 40rpx;
+  height: 40rpx;
+  margin-left: 70rpx;
+}
+.number{
+  font-size: 25rpx;
+  margin-left: 5rpx;
+  color: #8d8b8b;
+}
+.info{
+  display: flex;
+  align-items: center;
+  margin: 20rpx 0rpx;
+}
+
