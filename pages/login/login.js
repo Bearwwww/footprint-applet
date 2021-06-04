@@ -10,17 +10,31 @@ Page({
     password: ''
   },
 
+    //获取用户的用户名
+  getPasswordInpout: function (e) {
+    this.setData({
+      userName: e.detail.value
+    })
+  },
+
   //获取用户的电话号码
-  phoneNumberInput: function (e) {
+  getPhoneNumber: function (e) {
     this.setData({
       phoneNumber: e.detail.value
     })
   },
 
   //获取密码
-  passwordInpout: function (e) {
+  getPasswordInpout: function (e) {
     this.setData({
       password: e.detail.value
+    })
+  },
+
+  // 跳转到注册界面
+  goToRegister: function () {
+    wx.navigateTo({
+      url: "/pages/register/register"
     })
   },
 

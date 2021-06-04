@@ -2,7 +2,7 @@
 <view class="main">
 
 <view class="image">
-<image class="image" src="/pages/icon/environment.png" mode="widthFix">
+<image class="image" src="/Image/icon/environment.png" mode="widthFix">
 </image>
 </view>
 
@@ -15,22 +15,22 @@
 </view>
 
 <view class="input">
-    <input class="inputText" placeholder="    请输入用户名" bindinput="userNameInput" placeholder-class="pl-class" />
+    <input class="inputText" placeholder="    请输入用户名" bindinput="getUserName" placeholder-class="pl-class" />
   </view>
 
   <view class="input-first">
-    <input class="inputText" placeholder="    请输入手机号" bindinput="phoneNumberInput" placeholder-class="pl-class" />
+    <input class="inputText" placeholder="    请输入手机号" bindinput="getPhoneNumber" placeholder-class="pl-class" />
   </view>
 
   <view class="input-second">
-    <input class="inputText" placeholder="    请输入密码" bindinput="passwordInput" placeholder-class="pl-class" />
+    <input class="inputText" placeholder="    请输入密码" bindinput="getPassword" placeholder-class="pl-class" />
   </view>
 
   <view class="button-first">
-    <button bindtap="login" style="width:100%;">登录</button>
+    <button bindtap="login" style="width:100%;" bindtap="goto">登录</button> <!--做个弹窗-->
   </view>
 
   <view class="button-second">
-    <button bindtap="register" style="width:50%">还没有账号？点我注册</button>
+    <button bindtap="register" style="width:50%" bindtap="gotoRegister">还没有账号？点我注册</button>
   </view>
 </view>
