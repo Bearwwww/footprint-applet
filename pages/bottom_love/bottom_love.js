@@ -6,8 +6,25 @@ Page({
    */
   data: {
       love:false,
-      "number":"123"
+      numbers:'13'
+      
+  },
 
+  lovebottom:function(e){
+    console.log("love function");
+    console.log(e);
+    var loveNew = this.data.loves;
+
+    if (loveNew[e.target.dataset.index].loves == true){
+      loveNew[e.target.dataset.index].loves = false;
+      loveNew[e.target.dataset.index].numbers--;
+    }else{
+      loveNew[e.target.dataset.index].loves = true;
+      loveNew[e.target.dataset.index].numbers++;
+    }
+    this.setData({
+      loves:loveNew
+    }) 
   },
 
   /**
