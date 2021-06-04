@@ -42,7 +42,7 @@
 </view>
 
 <view class="button-first">
-    <button bindtap="register" style="width:94%;" >注册</button>
+    <button bindtap="register" style="width:94%;" >注册</button>   <!--做个弹窗-->
 </view>
 
 <view class="button-second">

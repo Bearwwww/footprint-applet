@@ -5,7 +5,52 @@ Page({
    * 页面的初始数据
    */
   data: {
+    userName:'',
+    phoneNumber: '',
+    password: '',
+    paswwordAgain:'',
+    verificationCode:''
+  },
 
+  //获取用户的用户名
+  getUserName: function (e) {
+    this.setData({
+      userName: e.detail.value
+    })
+  },
+
+  //获取用户的电话号码
+  getPhoneNumber: function (e) {
+    this.setData({
+      phoneNumber: e.detail.value
+    })
+  },
+
+  //获取密码
+  getPassword: function (e) {
+    this.setData({
+      password: e.detail.value
+    })
+  },
+
+  //获取确认密码
+  getPasswordAgain: function (e) {
+    this.setData({
+      passwordAgain: e.detail.value
+    })
+  },
+
+  getVerificationCode: function (e) {
+    this.setData({
+      verificationCode: e.detail.value
+    })
+  },
+
+  // 跳转到登录界面
+  goToLogin: function () {
+    wx.navigateTo({
+      url: "/pages/login/login"
+    })
   },
 
   /**
