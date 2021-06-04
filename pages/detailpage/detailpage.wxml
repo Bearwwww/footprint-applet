@@ -1,0 +1,32 @@
+<!--pages/detailpage/detailpage.wxml-->
+<view class="content">
+  <view class="image-box">
+    <swiper class="swiper" 
+          autoplay="{{false}}"
+          indicator-dots="true"
+          indicator-color="#cecece"
+          indicator-active-color="#696868"
+          
+          >
+        <block wx:for="{{imageList}}" wx:key="item">
+          <swiper-item >
+            <view class="show">
+            <image class="showImage" src="{{item}}" mode="widthFix" ></image>  
+            </view>
+          </swiper-item>
+        </block>
+    </swiper>
+  </view>
+    
+  <view class="text-box">
+    <block wx:for="{{textList}}" wx:key="index">
+      <view class="title-wrap">
+        <text>{{item.title}}</text>
+      </view>
+      <view class="articles-wrap">
+        <text>{{item.articles}}</text>
+      </view>
+    </block>
+  </view>
+</view>
+<include src="/pages/bottom_love/bottom_love.wxml"></include>
