@@ -8,10 +8,11 @@
           </view>
 
         <view class="info">
+        <view class="author">
           <image class="portrait" src="{{item.img}}" mode="widthFix"></image>
-            <view class="name-warp">
-              <text>{{item.name}}</text>
-            </view>
+          <text class="name-warp">{{item.name}}</text>
+        </view>
+
             <view class="loveNumber">
               <image class="love" src="{{item.love==true?'/Image/icon/redHeart.png':'/Image/icon/heart.png'}}" bindtap='loveleft' data-index='{{index}}'></image>
               <text class="number">{{item.number}}</text>
@@ -30,9 +31,7 @@
         <view class="info">
           <view class="author">
             <image class="portrait" src="{{item.img}}" mode="widthFix"></image>
-            <view class="name-warp">
-              <text>{{item.name}}</text>
-            </view>
+              <text class="name-warp">{{item.name}}</text>
           </view>
 
             <view class="loveNumber">
