@@ -6,11 +6,11 @@
   <view class="station">
   </view>
   <view class="comments">
-    <textarea class="articles-wrap" maxlength="150" bindinput="getContent"
+    <textarea class="articles-wrap" maxlength="500" bindinput="getContent"
       placeholder='请输入内容！'></textarea>
   </view>
   <view class="num_comments">
-    <view class="contrast">{{text_num}}/150</view>
+    <view class="contrast">{{text_num}}/500</view>
   </view>
   <view class="station"></view>
   <!-- 上传图片 -->
@@ -24,9 +24,6 @@
   </view>
   <view class="prompt" style="color:#ccc">
     <text class="color_red">*</text>请选择你要发布的照片！
-  </view>
-  <view class="prompt" style="color:#ccc;margin-top:15rpx;">
-    <text class="color_red">*</text>审核周期为1~3个工作日！
   </view>
 
   <view class="submit" bindtap="goToHomePage">发布</view>   <!--做个弹窗-->
