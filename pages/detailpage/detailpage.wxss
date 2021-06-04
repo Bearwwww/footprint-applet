@@ -32,7 +32,6 @@
   display: flex;
   flex-direction: column;
   align-items:flex-start;
-
 }
 .title-wrap{
   padding: 20rpx 20rpx 10rpx 0rpx;
@@ -45,33 +44,7 @@
   font-size: 28rpx;
   font-weight: 400;
   color: #000000;
+}
 
-}
-.divLine{
-  width: 100%;
-  height: 5rpx;
-  background-color: #ececd9;
-  margin-top: 10rpx;
-}
-.loveNumber{
-  display: flex;
-  flex-direction: row;
-  width: 100%;
-  height:100rpx;
-  bottom: 0rpx;
-  position: fixed;
-  background-color: #ffffff;
-}
-.love{
-  margin-top: 30rpx;
-  width:50rpx;
-  height:50rpx;
-  margin-right: 100rpx;
-
-}
-.number{
-  font-size: 33rpx;
-  color: #9e9a9a;
-}
 
 
