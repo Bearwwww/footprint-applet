@@ -85,6 +85,26 @@ Page({
     })
   },
 
+  goToHomePage:function (e) {
+    
+  },
+  goToPublish:function (e) {
+    wx.navigateTo({
+      url: '/pages/publish/publish',
+    })
+  },
+  goToMine:function (e) {
+    wx.navigateTo({
+      url: '/pages/mine/mine',
+    })
+  },
+  goToDetailPage:function(e) {
+    wx.navigateTo({
+      url: '/pages/detailpage/detailpage',
+    })
+  
+  },
+
   /**
    * 生命周期函数--监听页面加载
    */

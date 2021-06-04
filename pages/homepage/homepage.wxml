@@ -1,11 +1,12 @@
 <!--pages/homepage/homepage.wxml-->
 <view class="content">
   <view class="left">
-    <block wx:for="{{leftList}}" wx:key="item">
-      <image class="pic" src="{{item.cover}}" mode="widthFix"></image>
-        <view class="title-wrap">
-          <text>{{item.title}}</text>
-        </view>
+      <block wx:for="{{leftList}}" wx:key="item">
+        <image class="pic" src="{{item.cover}}" mode="widthFix" bindtap="goToDetailPage"></image>
+          <view class="title-wrap" bindtap="goToDetailPage">
+            <text>{{item.title}}</text>
+          </view>
+
         <view class="info">
           <image class="portrait" src="{{item.img}}" mode="widthFix"></image>
             <view class="name-warp">
@@ -21,15 +22,19 @@
 
   <view class="right">
     <block wx:for="{{rightList}}" wx:key="item">
-      <image class="pic" src="{{item.cover}}" mode="widthFix"></image>
-        <view class="title-wrap">
+      <image class="pic" src="{{item.cover}}" mode="widthFix" bindtap="goToDetailPage"></image>
+        <view class="title-wrap" bindtap="goToDetailPage">
           <text>{{item.title}}</text>
         </view>
+
         <view class="info">
-          <image class="portrait" src="{{item.img}}" mode="widthFix"></image>
+          <view class="author">
+            <image class="portrait" src="{{item.img}}" mode="widthFix"></image>
             <view class="name-warp">
               <text>{{item.name}}</text>
             </view>
+          </view>
+
             <view class="loveNumber">
               <image class="love" src="{{item.love==true?'/Image/icon/redHeart.png':'/Image/icon/heart.png'}}" bindtap='loveright' data-index='{{index}}'></image>
               <text class="number">{{item.number}}</text>

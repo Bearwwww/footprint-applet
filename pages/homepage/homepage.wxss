@@ -47,33 +47,40 @@
 .portrait{
   width:50rpx;
   height: 50rpx;
-  
   border-radius: 50%;
 }
 .name-warp{
-  font-size: 20rpx;
+  font-size: 25rpx;
   color: #a5a4a4;
   font-weight: 500;
-  margin-left: 10rpx;
+  
   letter-spacing: 3rpx;
 }
+.author{
+  width: auto;
+  height: 50rpx;
+}
 .loveNumber{
+  width: auto;
+  height: 50rpx;
   color: #333;
   display: flex;
-  align-items: center;
 }
 .love{
   width: 40rpx;
   height: 40rpx;
-  margin-left: 70rpx;
+
 }
 .number{
   font-size: 30rpx;
-  margin-left: 5rpx;
   color: #9e9a9a;
+  margin-left: 5rpx;
+
 }
 .info{
   display: flex;
   align-items: center;
-  margin: 20rpx 0rpx;
+  justify-content: space-between;
+  padding: 0 20rpx;
+  margin: 15rpx 0rpx;
 }
