@@ -46,6 +46,67 @@ Page({
     })
   },
 
+  //注册状态判断
+  register:function(e){
+    var that = this;
+    if (that.data.userName == ''){
+      wx.showModal({
+        title:'亲！',
+        content:'请输入用户名',
+        showCancel:false,
+        success(res){}
+      })
+    }
+    else if (that.data.phoneNumber == ''){
+      wx.showModal({
+        title:'亲！',
+        content:'请输入手机号',
+        showCancel:false,
+        success(res){}
+      })
+    }
+    else if (that.data.phoneNumber.length != 11){
+      wx.showModal({
+        title:'亲！',
+        content:'请输入正确的手机号',
+        showCancel:false,
+        success(res){}
+      })
+    }
+    else if (that.data.password == ''){
+      wx.showModal({
+        title:'亲！',
+        content:'请输入密码',
+        showCancel:false,
+        success(res){}
+      })
+    }
+    else if (that.data.password == ''){
+      wx.showModal({
+        title:'亲！',
+        content:'请输入确认密码',
+        showCancel:false,
+        success(res){}
+      })
+    }
+    else if (that.data.password != that.data.passwordAgain){
+      wx.showModal({
+        title:'亲！',
+        content:'两次输入密码不一致！',
+        showCancel:false,
+        success(res){}
+      })
+    }
+    else if (that.data.verificationCode == ''){
+      wx.showModal({
+        title:'亲！',
+        content:'请输入验证码',
+        showCancel:false,
+        success(res){}
+      })
+    }
+  },
+
   // 跳转到登录界面
   goToLogin: function () {
     wx.navigateTo({
