@@ -9,7 +9,7 @@ Page({
       pic: "/Image/icon/bear.jpg",
       username: "一只熊w",
       location:"上海",
-      gender: 1
+      gender: 0
     },
 
 
