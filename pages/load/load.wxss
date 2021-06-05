@@ -1,0 +1,63 @@
+/* pages/load/load.wxss */
+.main{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.image-wrap image{
+  width: 260rpx;
+  height: 260rpx;
+  margin-top: 90rpx;
+  margin-bottom: 40rpx;
+  border-radius: 50%;
+}
+
+.gray-rect{
+  width: 80%;
+  height: 4rpx;
+  background-color: rgb(235, 235, 235);
+  margin-bottom: 60rpx;
+}
+
+.text-wrap03{
+  padding:40rpx;
+}
+
+.text-wrap03 text{
+  font-size: 40rpx;
+  color: rgb(70, 69, 69);
+}
+
+.text-wrap01{
+  padding-bottom: 10rpx;
+  padding-top: 50rpx;
+}
+
+.text-wrap01 text{
+  font-size: 36rpx;
+  font-weight: 500;
+  color: rgb(70, 69, 69);
+}
+
+.text-wrap02{
+  padding: 20rpx;
+}
+
+.text-wrap02 text{
+  font-size: 36rpx;
+  font-weight: 500;
+  color: rgb(70, 69, 69);
+}
+
+.btn-wrap{
+  padding-top: 25rpx;
+  width: 100%;
+}
+
+.btn-wrap button{
+  background-color: #419ce2;
+  color: white;
+  border-radius: 5rpx;
+  font-weight: 400;
+}
