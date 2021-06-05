@@ -5,9 +5,10 @@ Page({
    * 页面的初始数据
    */
   data: {
-    title:"",
-    content:"",
-    photo:"/Image//icon/bear.jpg",
+    title: "",
+    content: "",
+    photo: "/Image//icon/bear.jpg",
+    imageList: []
   },
 
   //获取标题
@@ -28,6 +29,41 @@ Page({
   goToHomePage: function () {
     wx.navigateTo({
       url: "/pages/homepage/homepage"
+    })
+  },
+
+  updateImageList: function (event) {
+    console.log(event);
+    this.data.imageList = event.detail.all;
+    console.log(this.data.imageList);
+  },
+
+  publishArticle: function (e) {
+    // 用户没有选择图片
+    if (this.data.imageList.length == 0) {
+
+    } else {
+      for (var index = 0; index < this.data.imageList.length; index++)
+        this.uploadImage(index);
+    }
+  },
+
+  uploadImage: function (index) {
+    var that = this
+    wx.uploadFile({
+      filePath: that.data.imageList[index],
+      name: 'image_content',
+      url: 'http://127.0.0.1:20004/image/article_image',
+      formData: ({
+        //上传图片所要携带的参数
+        user_id: "4",
+        encrypt_code: 'T4mLlqC/Z6Ju27YUIWkMxg==',
+        article_id: "4",
+        index: index + 1
+      }),
+      success: function (res) {
+        console.log("上传成功");
+      }
     })
   },
 
