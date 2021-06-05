@@ -108,3 +108,8 @@ page {
   margin-top: 80rpx;
   margin-bottom: 80rpx;
 }
+
+.pick_image_btn_view{
+  width: 80rpx;
+  height: 80rpx;
+}
