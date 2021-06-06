@@ -8,6 +8,13 @@ Page({
     loveNumber:{
       love:false,
       number:"13"
+    },
+
+    articleRelateInfo:{
+      commentNum:12,
+      shareNum:15,
+      collectNum:456,
+      loveNum:45
     }
       
   },
