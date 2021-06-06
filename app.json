@@ -9,7 +9,8 @@
     "pages/index/index",
     "pages/logs/logs",
     "pages/homepage/homepage",
-    "pages/publish/publish"
+    "pages/publish/publish",
+    "pages/load/load"
   ],
   "window": {
     "backgroundTextStyle": "light",
