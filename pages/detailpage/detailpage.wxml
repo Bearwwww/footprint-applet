@@ -6,7 +6,6 @@
           indicator-dots="true"
           indicator-color="#cecece"
           indicator-active-color="#696868"
-          
           >
         <block wx:for="{{imageList}}" wx:key="item">
           <swiper-item >
@@ -19,14 +18,12 @@
   </view>
     
   <view class="text-box">
-    <block wx:for="{{textList}}" wx:key="index">
       <view class="title-wrap">
-        <text>{{item.title}}</text>
+        <text>{{article.title}}</text>
       </view>
       <view class="articles-wrap">
-        <text>{{item.articles}}</text>
+        <text>{{article.content}}</text>
       </view>
-    </block>
   </view>
 </view>
 <include src="/pages/bottom_love/bottom_love.wxml"></include>

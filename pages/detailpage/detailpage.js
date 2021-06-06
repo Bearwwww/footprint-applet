@@ -12,12 +12,12 @@ Page({
   //   "showImg":"/Image/img/le3.jpg"
   // }],
   imageList:["/Image/img/le5.jpg","/Image/img/le5.jpg","/Image/img/le3.jpg"],
-  textList:[{
+  article:{
     "title":"海花岛的一天",
-    "articles":"今天学了跳舞，我不会跳，但我要为别人的梦想努力，很想下班，什么时候可以下班？？",
+    "content":"今天学了跳舞，我不会跳，但我要为别人的梦想努力，很想下班，什么时候可以下班？？",
     love:true,
-    "number":"124"
-  }],
+    "totalLike":"124"
+  },
 
   },
   lovebottom:function(e){
