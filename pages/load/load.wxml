@@ -20,6 +20,6 @@
 </view>
 
 <view class="btn-wrap">
-    <button open-type="getUserInfo" bindgetuserinfo="bindGetUserInfo" style="width:70%;">授权登录</button>
+    <button bindtap="getUserProfile" style="width:70%;">授权登录</button>
 </view>
 </view>

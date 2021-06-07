@@ -5,44 +5,67 @@ Page({
    * 页面的初始数据
    */
   data: {
-    /**
-     * 页面的初始数据
-     */
-    data: {
-    },
-    bindGetUserInfo (e) {
-      if (e.detail.userInfo != null)
-      {
-        console.log(e.detail.userInfo);
-        getApp().globalData.userInfo = e.detail.userInfo;
+    face_url: "",
+    gender: "",
+    city: "",
+    province: ""
+  },
+
+  getUserProfile(e) {
+    wx.getUserProfile({
+      lang: "zh_CN",
+      desc: "用于完善会员资料",
+      success: (res) => {
+        this.setData({
+          userInfo: res.userInfo,
+        })
+        console.log(res);
+        //上传头像
+        //赋值
+        getApp().globalData.gender = res.userInfo.gender;
+        getApp().globalData.city = res.userInfo.city;
+        getApp().globalData.province = res.userInfo.province;
+        // wx.request({
+        //   url: getApp().globalData.face_url,
+        //   url: getApp().globalData.gender,
+        //   url: getApp().globalData.city,
+        //   url: getApp().globalData.province,
+        //   data: {
+        //     face_url: this.data.face_url,
+        //     gender: this.data.gender,
+        //     city: this.data.city,
+        //     province: this.data.province
+        //   }
+        // })
+        //跳转
         wx.redirectTo({
-          url:"/pages/login/login"
+          url: '/pages/login/login',
         })
       }
-    },
+    })
   },
 
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-// 查看是否授权
-wx.getSetting({
-  success (res){
-    if (res.authSetting['scope.userInfo']) {
-      // 已经授权，可以直接调用 getUserInfo 获取头像昵称
-      wx.getUserInfo({
-        success: function(res) {
-          // console.log(res.userInfo);
-          getApp().globalData.userInfo = res.userInfo;
-          // wx.redirectTo({
-          //   url:"/pages/login/login"
-          // })
+    // 查看是否授权
+    wx.getSetting({
+      success(res) {
+        if (res.authSetting['scope.userInfo']) {
+          // 已经授权，可以直接调用 getUserInfo 获取头像昵称
+          wx.getUserInfo({
+            success: function (res) {
+              // console.log(res.userInfo);
+              getApp().globalData.userInfo = res.userInfo;
+              // wx.redirectTo({
+              //   url:"/pages/login/login"
+              // })
+            }
+          })
         }
-      })
-    }
-  }
-})
+      }
+    })
   },
 
   /**

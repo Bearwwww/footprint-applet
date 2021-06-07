@@ -15,6 +15,9 @@ App({
   },
   globalData: {
     userInfo: null,
-    server : "http://localhost"
+    server : "http://localhost",
+    city: null,
+    gender: null,
+    province: null
   }
 })
