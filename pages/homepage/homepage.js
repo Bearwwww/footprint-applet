@@ -91,10 +91,11 @@ Page({
   goToPublish:function (e) {
     wx.navigateTo({
       url: '/pages/publish/publish',
+
     })
   },
   goToMine:function (e) {
-    wx.navigateTo({
+    wx.redirectTo({
       url: '/pages/mine/mine',
     })
   },
