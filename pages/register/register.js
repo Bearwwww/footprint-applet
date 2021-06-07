@@ -5,11 +5,10 @@ Page({
    * 页面的初始数据
    */
   data: {
-    userName:'',
+    userName: '',
     phoneNumber: '',
     password: '',
-    paswwordAgain:'',
-    verificationCode:''
+    paswwordAgain: '',
   },
 
   //获取用户的用户名
@@ -40,71 +39,109 @@ Page({
     })
   },
 
-  getVerificationCode: function (e) {
-    this.setData({
-      verificationCode: e.detail.value
-    })
-  },
+  // getVerificationCode: function (e) {
+  //   this.setData({
+  //     verificationCode: e.detail.value
+  //   })
+  // },
 
   //注册状态判断
-  register:function(e){
+  register: function (e) {
     var that = this;
-    if (that.data.userName == ''){
+    if (that.data.userName == '') {
       wx.showModal({
-        title:'亲！',
-        content:'请输入用户名',
-        showCancel:false,
-        success(res){}
+        title: '亲！',
+        content: '请输入用户名',
+        showCancel: false,
+        success(res) {}
       })
-    }
-    else if (that.data.phoneNumber == ''){
+    } else if (that.data.phoneNumber == '') {
       wx.showModal({
-        title:'亲！',
-        content:'请输入手机号',
-        showCancel:false,
-        success(res){}
+        title: '亲！',
+        content: '请输入手机号',
+        showCancel: false,
+        success(res) {}
       })
-    }
-    else if (that.data.phoneNumber.length != 11){
+    } else if (that.data.phoneNumber.length != 11) {
       wx.showModal({
-        title:'亲！',
-        content:'请输入正确的手机号',
-        showCancel:false,
-        success(res){}
+        title: '亲！',
+        content: '请输入正确的手机号',
+        showCancel: false,
+        success(res) {}
       })
-    }
-    else if (that.data.password == ''){
+    } else if (that.data.password == '') {
       wx.showModal({
-        title:'亲！',
-        content:'请输入密码',
-        showCancel:false,
-        success(res){}
+        title: '亲！',
+        content: '请输入密码',
+        showCancel: false,
+        success(res) {}
       })
-    }
-    else if (that.data.password == ''){
+    } else if (that.data.password == '') {
       wx.showModal({
-        title:'亲！',
-        content:'请输入确认密码',
-        showCancel:false,
-        success(res){}
+        title: '亲！',
+        content: '请输入确认密码',
+        showCancel: false,
+        success(res) {}
       })
-    }
-    else if (that.data.password != that.data.passwordAgain){
+    } else if (that.data.password != that.data.passwordAgain) {
       wx.showModal({
-        title:'亲！',
-        content:'两次输入密码不一致！',
-        showCancel:false,
-        success(res){}
+        title: '亲！',
+        content: '两次输入密码不一致！',
+        showCancel: false,
+        success(res) {}
       })
-    }
-    else if (that.data.verificationCode == ''){
+    } else if (that.data.verificationCode == '') {
       wx.showModal({
-        title:'亲！',
-        content:'请输入验证码',
-        showCancel:false,
-        success(res){}
+        title: '亲！',
+        content: '请输入验证码',
+        showCancel: false,
+        success(res) {}
       })
+    } else {
+      wx.request({
+        url: getApp().globalData.server + ":20002/json/user",
+        data: {
+          user_name: that.data.userName,
+          phone: that.data.phoneNumber,
+          password: that.data.password,
+          face_url: "123",
+          gender:getApp().globalData.gender ,
+          city: "qq",
+          province: "dd"
+        },
+        header:{
+          'content-type':'application/x-www-form-urlencoded'
+        },
+        method:"post",
+        success(res){
+          console.log("success")
+          console.log(res)
+          if(res.data.code ==0){
+            getApp().globalData.userInfo = res.data.data;
+                wx.showToast({
+                  title: '注册成功',
+                  icon:"success",
+                  duration: 3000,
+                  success(e){
+                    wx.redirectTo({
+                      url: '/pages/login/login',
+                    })
+                  }
+                })
+          }
+          else if (res.data.code == 3) {
+            wx.showToast({
+              title: '该手机号已注册过',
+              icon: "error",
+              duration: 3000
+            })
+            
+          }
+        }
+      })
+      console.log(that.data)
     }
+
   },
 
   // 跳转到登录界面
