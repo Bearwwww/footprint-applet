@@ -64,18 +64,32 @@ Page({
           },
           method:"get",
           success(res){
+            // console.log("success")
+            // console.log(res)
             if (res.data.code == 0){
                 getApp().globalData.userInfo = res.data.data;
                 wx.showToast({
                   title: '登录成功',
                   icon:"success",
+                  duration: 5000,
                   success(e){
                     wx.redirectTo({
                       url: '/pages/homepage/homepage',
                     })
                   }
                 })
-               
+            }
+            else if (res.data.code == 6){
+              wx.showToast({
+                title: '密码错误',
+                icon: "error",
+              })
+            }
+            else if (res.data.code == 5){
+              wx.showToast({
+                title: '用户不存在',
+                icon: "error",
+              })
             }
           },
           fail(res){
@@ -83,7 +97,8 @@ Page({
           }
 
         })
-      console.log(that.data)}
+      console.log(that.data)
+    }
     },
     // 2.把数据发送到后端
 
