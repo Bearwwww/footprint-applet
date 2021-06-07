@@ -27,6 +27,15 @@ Page({
 
   //跳转到主页
   goToHomePage: function () {
+    wx.showToast({
+      title: '发布成功',
+      icon: "success",
+      success(e){
+        wx.navigateBack({
+          delta: 1,
+        })
+      }
+    })
     wx.navigateTo({
       url: "/pages/homepage/homepage"
     })
