@@ -9,7 +9,7 @@
 
 .image{
   width: 33%;
-  padding-top: 30rpx;
+  padding-top: 50rpx;
   align-items: center;
   text-align: center;
 }
@@ -42,6 +42,7 @@
 
 .input-first {
   width: 92%;
+  padding-top: 50rpx;
   padding-bottom: 50rpx;
 }
 

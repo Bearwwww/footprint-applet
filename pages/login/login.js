@@ -6,16 +6,8 @@ Page({
    * 页面的初始数据
    */
   data: {
-    userName:'',
     phoneNumber: '',
     password: ''
-  },
-
-    //获取用户的用户名
-  getUserName: function (e) {
-    this.setData({
-      userName: e.detail.value
-    })
   },
 
   //获取用户的电话号码
@@ -37,15 +29,7 @@ Page({
      // 1.判断用户输入数据的合法性：不能为空，手机号应该是11位
     var that = this;
     // 手机号为空
-    if (that.data.userName == '') {
-      wx.showModal({
-        title: '亲！',
-        content: '请输入用户名',
-        showCancel: false,
-        success(res) { }
-      })
-    }
-    else if (that.data.phoneNumber == '') {
+     if (that.data.phoneNumber == '') {
       wx.showModal({
         title: '亲！',
         content: '请输入手机号',
@@ -72,6 +56,33 @@ Page({
       })
     }
     else {
+        wx.request({
+          url: getApp().globalData.server+":20002/json/user",
+          data:{
+            phone:that.data.phoneNumber,
+            password:that.data.password
+          },
+          method:"get",
+          success(res){
+            if (res.data.code == 0){
+                getApp().globalData.userInfo = res.data.data;
+                wx.showToast({
+                  title: '登录成功',
+                  icon:"success",
+                  success(e){
+                    wx.redirectTo({
+                      url: '/pages/homepage/homepage',
+                    })
+                  }
+                })
+               
+            }
+          },
+          fail(res){
+
+          }
+
+        })
       console.log(that.data)}
     },
     // 2.把数据发送到后端
