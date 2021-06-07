@@ -16,7 +16,12 @@
         </block>
     </swiper>
   </view>
-    
+
+  <view class="info">
+    <image class="portrait" src="{{article.img}}" mode="widthFix"></image>
+    <text class="name-warp">{{article.name}}</text>
+  </view>
+
   <view class="text-box">
       <view class="title-wrap">
         <text>{{article.title}}</text>

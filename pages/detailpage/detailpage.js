@@ -13,6 +13,8 @@ Page({
   // }],
   imageList:["/Image/img/le5.jpg","/Image/img/le5.jpg","/Image/img/le3.jpg"],
   article:{
+    "img":"/Image/img/teacherle.JPG",
+    "name":"利路修",
     "title":"海花岛的一天",
     "content":"今天学了跳舞，我不会跳，但我要为别人的梦想努力，很想下班，什么时候可以下班？？",
     love:true,
