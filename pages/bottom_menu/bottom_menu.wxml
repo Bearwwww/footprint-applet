@@ -2,11 +2,11 @@
 <view class="menu">
 
   <view class="left-bottom">
-    <text bindtap="goToHomePage">主页</text>
+    <text bindtap="goToHomePage">足迹广场</text>
   </view>
 
   <view class="center">
-    <image bindtap="goToPublish" src="/Image/icon/plussquare.png"></image>
+    <image bindtap="goToPublish" src="/Image/icon/addArticle.png"></image>
   </view>
 
   <view class="right-bottom">
