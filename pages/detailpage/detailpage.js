@@ -5,22 +5,9 @@ Page({
    * 页面的初始数据
    */
   data: {
-  //   imageList:[{
-  //     "showImg":"/Image/img/le5.jpg"   
-  //   },
-  // {
-  //   "showImg":"/Image/img/le3.jpg"
-  // }],
-  imageList:["D:\\Coding\\tmp\\13\\4\\1.png","/Image/img/le5.jpg","/Image/img/le3.jpg"],
-  article:{
-    "img":"/Image/img/teacherle.JPG",
-    "name":"利路修",
-    "title":"海花岛的一天",
-    "content":"今天学了跳舞，我不会跳，但我要为别人的梦想努力，很想下班，什么时候可以下班？？",
-    love:true,
-    "totalLike":"124"
-  },
-
+    index:null,
+    imageList:[],
+    article:null
   },
   lovebottom:function(e){
     console.log("love function");
@@ -42,7 +29,11 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-
+    // 存储homepage跳转过来时携带的数据
+    this.setData({
+      index:options.index
+    })
+    console.log("您点击的文章index为:"+options.index);
   },
 
   /**
@@ -50,13 +41,37 @@ Page({
    */
   onReady: function () {
 
+
   },
 
   /**
    * 生命周期函数--监听页面显示
    */
   onShow: function () {
-
+    var that = this;
+    var article = null;
+    var imageList = [];
+    var imageserver = getApp().globalData.imgserver;
+    // 获取文章信息
+    wx.getStorage({
+      key:'articleList',
+      success:function(res){
+        console.log("获取本地数据成功！");
+        console.log(res);
+        article = res.data[that.data.index];
+        // 生成用户头像地址
+        article['avatarUrl'] = imageserver +"/"+article.userId+"/0/0.png";
+        // 获取图片列表
+        for (var i = 1;i<=article.imageNum;i++){
+          imageList.push(imageserver+"/"+article.userId+"/"+article.articleId+"/"+i+".png");
+        }
+        that.setData({
+          article:article,
+          imageList:imageList
+        })
+      }
+    })
+   
   },
 
   /**

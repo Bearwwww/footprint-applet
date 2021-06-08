@@ -6,51 +6,9 @@ Page({
    */
   data: {
     leftList: null,
-    // leftList:[{
-    //   "cover":"/Image/cover/cloud.jpg",
-    //   "title":"白云白云白云白云白云",
-    //   "img":"/Image/img/teacherle.JPG",
-    //   "name":"利路修",
-    //   love:true,
-    //   number:"9823"
-    // },
-    // {
-    //   "cover":"/Image/cover/cloud.jpg",
-    //   "title":"白云",
-    //   "img":"/Image/img/teacherle.JPG",
-    //   "name":"利路修",
-    //   love:false,
-    //   "number":"0"
-    // }],
     rightList: null,
-    //   rightList:[{/
-    //     "cover":"/Image/cover/cloud.jpg",
-    //     "title":"白云白云白云白云白云白云白云白云白云白云白云白云白云白云白云白云白云白云",
-    //     "img":"/Image/img/teacherle.JPG",
-    //     "name":"利路修",
-    //     "love":false,
-    //     "number":0
-    //   },
-    //   {
-    //     "cover":"/Image/cover/le4.JPG",
-    //     "title":"白云",
-    //     "img":"/Image/img/teacherle.JPG",
-    //     "name":"利路修"
-    //   },
-    //   {
-    //     "cover":"/Image/cover/cloud.jpg",
-    //     "title":"白云",
-    //     "img":"/Image/img/teacherle.JPG",
-    //     "name":"利路修"
-    //   },
-    //   {
-    //     "cover":"/Image/cover/cloud.jpg",
-    //     "title":"白云",
-    //     "img":"/Image/img/teacherle.JPG",
-    //     "name":"利路修"
-    //   }
-    // ]
   },
+
   loveleft: function (e) {
     console.log("love function");
     console.log(e);
@@ -102,14 +60,18 @@ Page({
   },
   goToDetailPage: function (e) {
     console.log(e);
-    var isLeft = 1;
-    if (e.detail.x > 231) {
-      isLeft = 0;
-    }
+    // 保存当前点击文章在文章数组中真正的下标
+    var index;
+    // 用户点击右侧文章
+    if (e.detail.x > 231)
+      index = e.target.dataset.index*2+1;
+    // 用户点击左侧文章
+    else
+      index = e.target.dataset.index*2; 
+    // 1是左侧 0是右侧
     wx.navigateTo({
-      url: '/pages/detailpage/detailpage?detail=',
+      url: '/pages/detailpage/detailpage?index='+index,
     })
-
   },
 
   /**

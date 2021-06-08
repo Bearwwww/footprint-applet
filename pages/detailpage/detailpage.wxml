@@ -18,8 +18,8 @@
   </view>
 
   <view class="info">
-    <image class="portrait" src="{{article.img}}" mode="widthFix"></image>
-    <text class="name-warp">{{article.name}}</text>
+    <image class="portrait" src="{{article.avatarUrl}}" mode="widthFix"></image>
+    <text class="name-warp">{{article.userName}}</text>
   </view>
 
   <view class="text-box">
