@@ -102,7 +102,7 @@ Page({
   },
   goToDetailPage:function(e) {
     wx.navigateTo({
-      url: '/pages/detailpage/detailpage',
+      url: '/pages/detailpage/detailpage?detail=',
     })
   
   },
@@ -142,6 +142,7 @@ Page({
       success(res){
         // 获取文章成功
         if (res.data.code == 0){
+          console.log(123);
           console.log(res);
           // 构造文章数据
           var leftListTmp = [];
@@ -150,6 +151,8 @@ Page({
           for (var i = 0;i<res.data.data.length;i++){
             res.data.data[i]["coverUrl"] = imgserver+"/"
             +res.data.data[i].userId +"/"+ res.data.data[i].articleId+"/1.png";
+            res.data.data[i]["avatarUrl"] = imgserver+"/"
+            +res.data.data[i].userId +"/0/0.png";
             console.log(res.data.data[i].coverUrl);
             if(i%2 == 0)
               rightListTmp.push(res.data.data[i]);
@@ -160,6 +163,10 @@ Page({
           that.setData({
               rightList:rightListTmp,
               leftList:leftListTmp
+          })
+          wx.setStorage({
+            key:"articleList",
+            data:res.data.data
           })
           setTimeout(function(){
             wx.hideLoading();

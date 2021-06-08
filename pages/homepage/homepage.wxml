@@ -9,7 +9,7 @@
 
         <view class="info">
         <view class="author">
-          <image class="portrait" src="{{item.image}}" mode="widthFix"></image>
+          <image class="portrait" src="{{item.avatarUrl}}" mode="widthFix"></image>
           <text class="name-warp">{{item.userName}}</text>
         </view>
 
@@ -30,7 +30,7 @@
 
         <view class="info">
           <view class="author">
-            <image class="portrait" src="{{item.image}}" mode="widthFix"></image>
+            <image class="portrait" src="{{item.avatarUrl}}" mode="widthFix"></image>
               <text class="name-warp">{{item.userName}}</text>
           </view>
 
