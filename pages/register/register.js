@@ -99,7 +99,8 @@ Page({
       })
     } else {
       wx.request({
-        url: getApp().globalData.server + ":20002/json/user",
+        // url: getApp().globalData.server + ":20002/json/user",
+        url:"http:127.0.0.1:8080/1",
         data: {
           user_name: that.data.userName,
           phone: that.data.phoneNumber,
