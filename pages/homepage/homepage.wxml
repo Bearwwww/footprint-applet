@@ -2,9 +2,9 @@
 <view class="content">
   <view class="left">
       <block wx:for="{{leftList}}" wx:key="item">
-        <image class="pic" src="{{item.coverUrl}}" mode="widthFix" bindtap="goToDetailPage"></image>
-          <view class="title-wrap" bindtap="goToDetailPage">
-            <text>{{item.title}}</text>
+        <image class="pic" src="{{item.coverUrl}}" data-index='{{index}}'  mode="widthFix" bindtap="goToDetailPage"></image>
+          <view class="title-wrap" data-index='{{index}}' bindtap="goToDetailPage">
+            <text data-index='{{index}}'>{{item.title}}</text>
           </view>
 
         <view class="info">
@@ -23,8 +23,8 @@
 
   <view class="right">
     <block wx:for="{{rightList}}" wx:key="item">
-      <image class="pic" src="{{item.coverUrl}}" mode="widthFix" bindtap="goToDetailPage"></image>
-        <view class="title-wrap" bindtap="goToDetailPage">
+      <image class="pic" src="{{item.coverUrl}}" data-index='{{index}}' mode="widthFix" bindtap="goToDetailPage"></image>
+        <view class="title-wrap" data-index='{{index}}' bindtap="goToDetailPage">
           <text>{{item.title}}</text>
         </view>
 
