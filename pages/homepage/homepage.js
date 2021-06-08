@@ -5,7 +5,7 @@ Page({
    * 页面的初始数据
    */
   data: {
-    leftList:null,
+    leftList: null,
     // leftList:[{
     //   "cover":"/Image/cover/cloud.jpg",
     //   "title":"白云白云白云白云白云",
@@ -22,89 +22,94 @@ Page({
     //   love:false,
     //   "number":"0"
     // }],
-    rightList:null
-  //   rightList:[{
-  //     "cover":"/Image/cover/cloud.jpg",
-  //     "title":"白云白云白云白云白云白云白云白云白云白云白云白云白云白云白云白云白云白云",
-  //     "img":"/Image/img/teacherle.JPG",
-  //     "name":"利路修",
-  //     "love":false,
-  //     "number":0
-  //   },
-  //   {
-  //     "cover":"/Image/cover/le4.JPG",
-  //     "title":"白云",
-  //     "img":"/Image/img/teacherle.JPG",
-  //     "name":"利路修"
-  //   },
-  //   {
-  //     "cover":"/Image/cover/cloud.jpg",
-  //     "title":"白云",
-  //     "img":"/Image/img/teacherle.JPG",
-  //     "name":"利路修"
-  //   },
-  //   {
-  //     "cover":"/Image/cover/cloud.jpg",
-  //     "title":"白云",
-  //     "img":"/Image/img/teacherle.JPG",
-  //     "name":"利路修"
-  //   }
-  // ]
-},
-  loveleft:function(e){
+    rightList: null,
+    //   rightList:[{/
+    //     "cover":"/Image/cover/cloud.jpg",
+    //     "title":"白云白云白云白云白云白云白云白云白云白云白云白云白云白云白云白云白云白云",
+    //     "img":"/Image/img/teacherle.JPG",
+    //     "name":"利路修",
+    //     "love":false,
+    //     "number":0
+    //   },
+    //   {
+    //     "cover":"/Image/cover/le4.JPG",
+    //     "title":"白云",
+    //     "img":"/Image/img/teacherle.JPG",
+    //     "name":"利路修"
+    //   },
+    //   {
+    //     "cover":"/Image/cover/cloud.jpg",
+    //     "title":"白云",
+    //     "img":"/Image/img/teacherle.JPG",
+    //     "name":"利路修"
+    //   },
+    //   {
+    //     "cover":"/Image/cover/cloud.jpg",
+    //     "title":"白云",
+    //     "img":"/Image/img/teacherle.JPG",
+    //     "name":"利路修"
+    //   }
+    // ]
+  },
+  loveleft: function (e) {
     console.log("love function");
     console.log(e);
     var leftListNew = this.data.leftList;
 
-    if (leftListNew[e.target.dataset.index].love == true){
+    if (leftListNew[e.target.dataset.index].love == true) {
       leftListNew[e.target.dataset.index].love = false;
       leftListNew[e.target.dataset.index].number--;
-    }else{
+    } else {
       leftListNew[e.target.dataset.index].love = true;
       leftListNew[e.target.dataset.index].number++;
     }
     // this.data.leftList = leftListNew;
     this.setData({
-      leftList:leftListNew
-    }) 
+      leftList: leftListNew
+    })
   },
 
-  loveright:function(e){
+  loveright: function (e) {
     console.log("love function");
     console.log(e);
     var rightListNew = this.data.rightList;
 
-    if (rightListNew[e.target.dataset.index].love == true){
+    if (rightListNew[e.target.dataset.index].love == true) {
       rightListNew[e.target.dataset.index].love = false;
       rightListNew[e.target.dataset.index].number--;
-    }else{
+    } else {
       rightListNew[e.target.dataset.index].love = true;
       rightListNew[e.target.dataset.index].number++;
     }
     this.setData({
-      rightList:rightListNew
+      rightList: rightListNew
     })
   },
 
-  goToHomePage:function (e) {
-    
+  goToHomePage: function (e) {
+
   },
-  goToPublish:function (e) {
+  goToPublish: function (e) {
     wx.navigateTo({
       url: '/pages/publish/publish',
 
     })
   },
-  goToMine:function (e) {
+  goToMine: function (e) {
     wx.redirectTo({
       url: '/pages/mine/mine',
     })
   },
-  goToDetailPage:function(e) {
+  goToDetailPage: function (e) {
+    console.log(e);
+    var isLeft = 1;
+    if (e.detail.x > 231) {
+      isLeft = 0;
+    }
     wx.navigateTo({
       url: '/pages/detailpage/detailpage?detail=',
     })
-  
+
   },
 
   /**
@@ -118,69 +123,62 @@ Page({
    * 生命周期函数--监听页面初次渲染完成
    */
   onReady: function () {
-
-  },
-
-  /**
-   * 生命周期函数--监听页面显示
-   */
-  onShow: function () {
     var that = this;
     // 随机获取文章
     wx.request({
-      url: getApp().globalData.server+":20003/json/random_articles",
-      data:{
+      url: getApp().globalData.server + ":20003/json/random_articles",
+      data: {
         // user_id:getApp().globalData.userInfo.userId,
         // encrypt_code:getApp().globalData.userInfo.password
-        user_id:"4",
-        encrypt_code:"T4mLlqC/Z6Ju27YUIWkMxg=="
+        user_id: "4",
+        encrypt_code: "T4mLlqC/Z6Ju27YUIWkMxg=="
       },
-      method:'get',
-      header:{
-        'content-type':'application/x-www-form-urlencoded'
+      method: 'get',
+      header: {
+        'content-type': 'application/x-www-form-urlencoded'
       },
-      success(res){
+      success(res) {
         // 获取文章成功
-        if (res.data.code == 0){
+        if (res.data.code == 0) {
           console.log(123);
           console.log(res);
           // 构造文章数据
           var leftListTmp = [];
           var rightListTmp = [];
           var imgserver = getApp().globalData.imgserver;
-          for (var i = 0;i<res.data.data.length;i++){
-            res.data.data[i]["coverUrl"] = imgserver+"/"
-            +res.data.data[i].userId +"/"+ res.data.data[i].articleId+"/1.png";
-            res.data.data[i]["avatarUrl"] = imgserver+"/"
-            +res.data.data[i].userId +"/0/0.png";
+          for (var i = 0; i < res.data.data.length; i++) {
+            res.data.data[i]["coverUrl"] = imgserver + "/" +
+              res.data.data[i].userId + "/" + res.data.data[i].articleId + "/1.png";
+            res.data.data[i]["avatarUrl"] = imgserver + "/" +
+              res.data.data[i].userId + "/0/0.png";
             console.log(res.data.data[i].coverUrl);
-            if(i%2 == 0)
+            if (i % 2 == 0)
               rightListTmp.push(res.data.data[i]);
             else
               leftListTmp.push(res.data.data[i]);
             // rightListTmp.push(res.data.data[i+5]);
           }
           that.setData({
-              rightList:rightListTmp,
-              leftList:leftListTmp
+            rightList: rightListTmp,
+            leftList: leftListTmp
           })
           wx.setStorage({
-            key:"articleList",
-            data:res.data.data
+            key: "articleList",
+            data: res.data.data
           })
-          setTimeout(function(){
+          setTimeout(function () {
             wx.hideLoading();
             wx.showToast({
               title: '加载中',
               icon: "loading",
             })
           }, 600)
-        }else if (res.data.code == 7){
+        } else if (res.data.code == 7) {
           wx.showToast({
             title: '非法访问',
             icon: "error",
           })
-        }else {
+        } else {
           wx.showToast({
             title: '未知错误',
             icon: "error",
@@ -189,7 +187,15 @@ Page({
 
       }
 
-    }) 
+    })
+
+  },
+
+  /**
+   * 生命周期函数--监听页面显示
+   */
+  onShow: function () {
+  
   },
 
   /**
