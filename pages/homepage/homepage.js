@@ -14,14 +14,13 @@ Page({
     console.log(e);
     var leftListNew = this.data.leftList;
 
-    if (leftListNew[e.target.dataset.index].love == true) {
-      leftListNew[e.target.dataset.index].love = false;
-      leftListNew[e.target.dataset.index].number--;
+    if (leftListNew[e.target.dataset.index].isLike == '1') {
+      leftListNew[e.target.dataset.index].isLike = '0';
+      leftListNew[e.target.dataset.index].totalLike--;
     } else {
-      leftListNew[e.target.dataset.index].love = true;
-      leftListNew[e.target.dataset.index].number++;
+      leftListNew[e.target.dataset.index].isLike = '1';
+      leftListNew[e.target.dataset.index].totalLike++;
     }
-    // this.data.leftList = leftListNew;
     this.setData({
       leftList: leftListNew
     })
@@ -31,13 +30,13 @@ Page({
     console.log("love function");
     console.log(e);
     var rightListNew = this.data.rightList;
-
-    if (rightListNew[e.target.dataset.index].love == true) {
-      rightListNew[e.target.dataset.index].love = false;
-      rightListNew[e.target.dataset.index].number--;
+    console.log(rightListNew[e.target.dataset.index]);
+    if (rightListNew[e.target.dataset.index].isLike == '1') {
+      rightListNew[e.target.dataset.index].isLike = '0';
+      rightListNew[e.target.dataset.index].totalLike--;
     } else {
-      rightListNew[e.target.dataset.index].love = true;
-      rightListNew[e.target.dataset.index].number++;
+      rightListNew[e.target.dataset.index].isLike = '1';
+      rightListNew[e.target.dataset.index].totalLike++;
     }
     this.setData({
       rightList: rightListNew
@@ -64,13 +63,13 @@ Page({
     var index;
     // 用户点击右侧文章
     if (e.detail.x > 231)
-      index = e.target.dataset.index*2+1;
+      index = e.target.dataset.index * 2 + 1;
     // 用户点击左侧文章
     else
-      index = e.target.dataset.index*2; 
+      index = e.target.dataset.index * 2;
     // 1是左侧 0是右侧
     wx.navigateTo({
-      url: '/pages/detailpage/detailpage?index='+index,
+      url: '/pages/detailpage/detailpage?index=' + index,
     })
   },
 
@@ -157,7 +156,7 @@ Page({
    * 生命周期函数--监听页面显示
    */
   onShow: function () {
-  
+
   },
 
   /**

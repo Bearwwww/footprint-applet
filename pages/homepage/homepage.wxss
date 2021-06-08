@@ -12,7 +12,7 @@
   flex-direction: row;
   margin: 20rpx;
   overflow: hidden;
-  padding-bottom: 96rpx;
+  padding-bottom: 85rpx;
 }
 .left{
   width: 345rpx;
