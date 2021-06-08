@@ -16,6 +16,7 @@ App({
   globalData: {
     userInfo: null,
     server : "http://localhost",
+    imgserver:"image.footprint.com",
     city: null,
     gender: null,
     province: null

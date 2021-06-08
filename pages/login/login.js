@@ -93,7 +93,10 @@ Page({
             }
           },
           fail(res){
-
+            wx.showToast({
+              title: '网络错误',
+              icon: "error",
+            })
           }
 
         })

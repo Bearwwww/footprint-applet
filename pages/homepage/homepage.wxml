@@ -2,20 +2,20 @@
 <view class="content">
   <view class="left">
       <block wx:for="{{leftList}}" wx:key="item">
-        <image class="pic" src="{{item.cover}}" mode="widthFix" bindtap="goToDetailPage"></image>
+        <image class="pic" src="{{item.coverUrl}}" mode="widthFix" bindtap="goToDetailPage"></image>
           <view class="title-wrap" bindtap="goToDetailPage">
             <text>{{item.title}}</text>
           </view>
 
         <view class="info">
         <view class="author">
-          <image class="portrait" src="{{item.img}}" mode="widthFix"></image>
-          <text class="name-warp">{{item.name}}</text>
+          <image class="portrait" src="{{item.image}}" mode="widthFix"></image>
+          <text class="name-warp">{{item.userName}}</text>
         </view>
 
             <view class="loveNumber">
-              <image class="love" src="{{item.love==true?'/Image/icon/redHeart.png':'/Image/icon/heart.png'}}" bindtap='loveleft' data-index='{{index}}'></image>
-              <text class="number">{{item.number}}</text>
+              <image class="love" src="{{item.isLike=='1'?'/Image/icon/redHeart.png':'/Image/icon/heart.png'}}" bindtap='loveleft' data-index='{{index}}'></image>
+              <text class="number">{{item.totalLike}}</text>
             </view>
         </view>
     </block>
@@ -23,20 +23,20 @@
 
   <view class="right">
     <block wx:for="{{rightList}}" wx:key="item">
-      <image class="pic" src="{{item.cover}}" mode="widthFix" bindtap="goToDetailPage"></image>
+      <image class="pic" src="{{item.coverUrl}}" mode="widthFix" bindtap="goToDetailPage"></image>
         <view class="title-wrap" bindtap="goToDetailPage">
           <text>{{item.title}}</text>
         </view>
 
         <view class="info">
           <view class="author">
-            <image class="portrait" src="{{item.img}}" mode="widthFix"></image>
-              <text class="name-warp">{{item.name}}</text>
+            <image class="portrait" src="{{item.image}}" mode="widthFix"></image>
+              <text class="name-warp">{{item.userName}}</text>
           </view>
 
             <view class="loveNumber">
-              <image class="love" src="{{item.love==true?'/Image/icon/redHeart.png':'/Image/icon/heart.png'}}" bindtap='loveright' data-index='{{index}}'></image>
-              <text class="number">{{item.number}}</text>
+              <image class="love" src="{{item.isLike=='1'?'/Image/icon/redHeart.png':'/Image/icon/heart.png'}}" bindtap='loveright' data-index='{{index}}'></image>
+              <text class="number">{{item.totalLike}}</text>
             </view>
         </view>
     </block>

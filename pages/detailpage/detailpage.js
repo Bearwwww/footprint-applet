@@ -11,7 +11,7 @@ Page({
   // {
   //   "showImg":"/Image/img/le3.jpg"
   // }],
-  imageList:["/Image/img/le5.jpg","/Image/img/le5.jpg","/Image/img/le3.jpg"],
+  imageList:["D:\\Coding\\tmp\\13\\4\\1.png","/Image/img/le5.jpg","/Image/img/le3.jpg"],
   article:{
     "title":"海花岛的一天",
     "content":"今天学了跳舞，我不会跳，但我要为别人的梦想努力，很想下班，什么时候可以下班？？",
