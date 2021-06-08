@@ -1,3 +1,5 @@
+const util = require("../../utils/util")
+
 // pages/publish/publish.js
 Page({
 
@@ -7,7 +9,6 @@ Page({
   data: {
     title: "",
     content: "",
-    photo: "/Image//icon/bear.jpg",
     imageList: []
   },
 
@@ -48,16 +49,62 @@ Page({
   },
 
   publishArticle: function (e) {
+    // 标题为空
+    if (this.data.title == ""){
+      wx.showToast({
+        title: '标题为空',
+        icon: "error",
+      })
+    }
+    // 内容为空
+    else if (this.data.content == "") {
+      wx.showToast({
+        title: '内容为空',
+        icon: "error",
+      })
+    }
     // 用户没有选择图片
-    if (this.data.imageList.length == 0) {
-
-    } else {
-      for (var index = 0; index < this.data.imageList.length; index++)
-        this.uploadImage(index);
+    else if (this.data.imageList.length == 0) {
+      wx.showToast({
+        title: '图片为空',
+        icon: "error",
+      })
+    } 
+    else {
+      // 先上传文章内容
+      wx.request({
+        url: getApp().globalData.server + ":20003/json/random_articles",
+        data: {
+          // user_id:getApp().globalData.userInfo.userId,
+          // encrypt_code:getApp().globalData.userInfo.password
+          user_id: "4",
+          encrypt_code: "T4mLlqC/Z6Ju27YUIWkMxg==",
+          title:this.data.title,
+          content:this.data.content,
+          timestamp:util.getCurrTimeStamp(),
+          image_num:this.data.imageList.length
+        },
+        method: 'post',
+        header: {
+          'content-type': 'application/x-www-form-urlencoded'
+        },
+        success(res){
+          console.log(res);
+          for (var index = 0; index < this.data.imageList.length; index++)
+            this.uploadImage(index, res.data.data);
+          wx.showToast({
+              title: '发布成功',
+              icon: "success",
+          })
+          wx.navigateBack({
+            delta: 1,
+          })
+        }
+        })
     }
   },
 
-  uploadImage: function (index) {
+  uploadImage: function (index,article_id) {
     var that = this
     wx.uploadFile({
       filePath: that.data.imageList[index],
@@ -72,8 +119,8 @@ Page({
       }),
       success: function (res) {
         console.log("上传成功");
-      }
-    })
+    }
+  })
   },
 
   /**
@@ -87,7 +134,7 @@ Page({
    * 生命周期函数--监听页面初次渲染完成
    */
   onReady: function () {
-
+    
   },
 
   /**

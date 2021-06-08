@@ -23,10 +23,7 @@
     </l-imagePicker>
   </view>
   <view class="prompt">
-    已上传<text class="color_red">{{beater}}</text>张， 最多可上传<text class="color_red">3</text>张
-  </view>
-  <view class="prompt" style="color:#ccc">
-    <text class="color_red">*</text>请选择你要发布的照片！
+    请选择你要发布的照片，最多可上传5张
   </view>
 
   <view class="submit" bindtap="publishArticle">发布</view>
