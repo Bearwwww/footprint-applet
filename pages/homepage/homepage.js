@@ -150,7 +150,8 @@ Page({
           for (var i = 0;i<res.data.data.length;i++){
             res.data.data[i]["coverUrl"] = imgserver+"/"
             +res.data.data[i].userId +"/"+ res.data.data[i].articleId+"/1.png";
-            if(i == 0 || i == 1)
+            console.log(res.data.data[i].coverUrl);
+            if(i%2 == 0)
               rightListTmp.push(res.data.data[i]);
             else
               leftListTmp.push(res.data.data[i]);
