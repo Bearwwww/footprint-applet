@@ -4,17 +4,17 @@
     <view class="userinfo-all">
       <view class="userInfo-avatar">
         <view class="border">
-          <image src="{{userInfo.pic}}"></image>
+          <image src="{{userInfo.avatarUrl}}"></image>
           <!--照片路径-->
         </view>
       </view>
 
       <view class="gender" >
-      <image class="gendershow" src="{{userInfo.gender==1?'/Image/icon/boy.png':'/Image/icon/girl.png'}}" ></image>
+      <image class="gendershow" src="{{userInfo.gender=='1'?'/Image/icon/boy.png':'/Image/icon/girl.png'}}" ></image>
       </view>
 
       <view class="userInfo-name" bindtap="getUserName">
-        <text>{{userInfo.username}}</text>
+        <text>{{userInfo.userName}}</text>
         <!--用户名路径-->
       </view>
 
@@ -23,7 +23,7 @@
       </view>
 
       <view class="locationName" bindtap="location-name">
-        <text>{{userInfo.location}}</text>
+        <text>{{userInfo.province}}</text>
       </view>
     </view>
   <!-- </block> -->
@@ -31,21 +31,20 @@
   <view class="content">
     <view class="left">
       <block wx:for="{{leftList}}" wx:key="index">
-        <image class="pic" src="{{item.cover}}" bindtap="goToDetailPage" mode="widthFix"></image>
+        <image class="pic" src="{{item.coverUrl}}" bindtap="goToDetailPage" mode="widthFix"></image>
         <view class="title-wrap" bindtap="goToDetailPage">
           <text>{{item.title}}</text>
         </view>
         <view class="info">
-          <image class="portrait" src="{{item.image}}" mode="widthFix"></image>
-          <view class="name-wrap">
-            <text>{{item.name}}</text>
+          <view class="timeStamp">
+            <text>{{item.timeStamp}}</text>
           </view>
           <view class="loveNumber">
             <image class='love' src="{{item.love==true?'/Image/icon/redHeart.png':'/Image/icon/heart.png'}}"
               bindtap='loveleft' data-index='{{index}}'>
             </image>
             <view class="number">
-              <text>{{item.number}}</text>
+              <text>{{item.totalLike}}</text>
             </view>
           </view>
         </view>
@@ -54,20 +53,19 @@
 
     <view class="right">
       <block wx:for="{{rightList}}" wx:key="index">
-        <image class="pic" src="{{item.cover}}" bindtap="goToDetailPage" mode="widthFix"></image>
+        <image class="pic" src="{{item.coverUrl}}" bindtap="goToDetailPage" mode="widthFix"></image>
         <view class="title-wrap" bindtap="goToDetailPage">
           <text>{{item.title}}</text>
         </view>
         <view class="info">
-          <image class="portrait" src="{{item.image}}" mode="widthFix"></image>
-          <view class="name-wrap">
-            <text>{{item.name}}</text>
+          <view class="timeStamp">
+            <text>{{item.timeStamp}}</text>
           </view>
           <view class="loveNumber">
             <image class='love' src="{{item.love==true?'/Image/icon/redHeart.png':'/Image/icon/heart.png'}}"
               bindtap='loveright' data-index='{{index}}'>
             </image>
-            <text class="number">{{item.number}}</text>
+            <text class="number">{{item.totalLike}}</text>
           </view>
         </view>
       </block>

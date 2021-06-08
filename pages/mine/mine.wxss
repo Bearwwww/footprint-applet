@@ -132,14 +132,7 @@ page {
   -webkit-box-orient: vertical;
 }
 
-.portrait {
-  width: 50rpx;
-  height: 50rpx;
-  margin-left: 10rpx;
-  border-radius: 50%;
-}
-
-.name-wrap {
+.timeStamp {
   font-size: 25rpx;
   color: #727272;
   font-weight: 500;

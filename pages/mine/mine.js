@@ -5,49 +5,47 @@ Page({
    * 页面的初始数据
    */
   data: {
-    userInfo: {
-      pic: "/Image/icon/bear.jpg",
-      username: "一只熊w",
-      location:"上海",
-      gender: 0
-    },
+    userInfo:{},
 
 
-    leftList: [{
-        cover: "/Image/icon/bear.jpg",
-        title: "描述服务和协议之间的关系 协议可以自由改变；服务一般不变化",
-        name: "一只熊w",
-        image: "/Image/icon/bear.jpg",
-        love: true,
-        number: 1234
-      },
-      {
-        cover: "/Image/icon/bear.jpg",
-        title: "是呀",
-        name: "一只熊w",
-        image: "/Image/icon/bear.jpg",
-        love: false,
-        number: 123
-      },
-      {
-        cover: "/Image/icon/bear.jpg",
-        title: "描述服务和协议之间的关系 协议可以自由改变；服务一般不变化",
-        name: "一只熊w",
-        image: "/Image/icon/bear.jpg",
-        love: true,
-        number: 123
-      },
+    leftList: [
+      // {
+      //   cover: "/Image/icon/bear.jpg",
+      //   title: "描述服务和协议之间的关系 协议可以自由改变；服务一般不变化",
+      //   name: "一只熊w",
+      //   image: "/Image/icon/bear.jpg",
+      //   love: true,
+      //   number: 1234
+      // },
+      // {
+      //   cover: "/Image/icon/bear.jpg",
+      //   title: "是呀",
+      //   name: "一只熊w",
+      //   image: "/Image/icon/bear.jpg",
+      //   love: false,
+      //   number: 123
+      // },
+      // {
+      //   cover: "/Image/icon/bear.jpg",
+      //   title: "描述服务和协议之间的关系 协议可以自由改变；服务一般不变化",
+      //   name: "一只熊w",
+      //   image: "/Image/icon/bear.jpg",
+      //   love: true,
+      //   number: 123
+      // },
     ],
 
-    rightList: [{
-      cover: "/Image/icon/bear.jpg",
-      title: "描述服务和协议之间的关系 协议可以自由改变；服务一般不变化",
-      name: "一只熊w",
-      image: "/Image/icon/bear.jpg",
-      love: true,
-      number: 123,
+    rightList: [
+    //   {
+    //   cover: "/Image/icon/bear.jpg",
+    //   title: "描述服务和协议之间的关系 协议可以自由改变；服务一般不变化",
+    //   name: "一只熊w",
+    //   image: "/Image/icon/bear.jpg",
+    //   love: true,
+    //   number: 123,
 
-    }],
+    // }
+  ],
 
   },
 
@@ -58,10 +56,10 @@ Page({
 
     if (leftListNew[e.target.dataset.index].love == true) {
       leftListNew[e.target.dataset.index].love = false;
-      leftListNew[e.target.dataset.index].number--;
+      leftListNew[e.target.dataset.index].totalLike--;
     } else {
       leftListNew[e.target.dataset.index].love = true;
-      leftListNew[e.target.dataset.index].number++;
+      leftListNew[e.target.dataset.index].totalLike++;
     }
     // this.data.leftList = leftListNew;
     this.setData({
@@ -77,10 +75,10 @@ Page({
 
     if (rightListNew[e.target.dataset.index].love == true) {
       rightListNew[e.target.dataset.index].love = false;
-      rightListNew[e.target.dataset.index].number--;
+      rightListNew[e.target.dataset.index].totalLike--;
     } else {
       rightListNew[e.target.dataset.index].love = true;
-      rightListNew[e.target.dataset.index].number++;
+      rightListNew[e.target.dataset.index].totalLike++;
     }
     this.setData({
       rightList: rightListNew
@@ -134,6 +132,121 @@ Page({
    * 生命周期函数--监听页面显示
    */
   onShow: function () {
+    var that = this;
+    // var that = this;
+    var util = require("../../utils/util.js");
+    wx.request({
+      url: getApp().globalData.server + ":20003/json/my_articles",
+      data: {
+        // user_id:getApp().globalData.userInfo.userId,
+        // encrypt_code:getApp().globalData.userInfo.password
+        user_id: "4",
+        encrypt_code: "T4mLlqC/Z6Ju27YUIWkMxg=="
+      },
+      method: 'get',
+      header: {
+        'content-type': 'application/x-www-form-urlencoded'
+      },
+      success(res) {
+        // 获取文章成功
+        if (res.data.code == 0) {
+          console.log(123);
+          console.log(res);
+          // 构造文章数据
+          var leftListTmp = [];
+          var rightListTmp = [];
+          var imgserver = getApp().globalData.imgserver;
+          var articleList = res.data.data;
+          for (var i = 0; i < articleList.length; i++) {
+            articleList[i]["coverUrl"] = imgserver + "/" +
+            articleList[i].userId + "/" + articleList[i].articleId + "/1.png";
+        
+              articleList[i].timeStamp = util.timeStamp2YMD(articleList[i].timeStamp);
+              if (i % 2 == 0) {
+                rightListTmp.push(articleList[i]);
+              } else {
+                leftListTmp.push(articleList[i]);
+              }
+          }
+          console.log(leftListTmp);
+          var userInfo = getApp().globalData.userInfo;
+          userInfo['avatarUrl'] = imgserver+"/"+userInfo.userId+"/0/0.png";
+          
+          that.setData({
+            rightList: rightListTmp,
+            leftList: leftListTmp,
+            userInfo:userInfo
+          })
+          // wx.setStorage({
+          //   key: "articleList",
+          //   data: res.data.data
+          // })
+          setTimeout(function () {
+            wx.hideLoading();
+            wx.showToast({
+              title: '加载中',
+              icon: "loading",
+            })
+          }, 600)
+        } else if (res.data.code == 7) {
+          wx.showToast({
+            title: '非法访问',
+            icon: "error",
+          })
+        } else {
+          wx.showToast({
+            title: '未知错误',
+            icon: "error",
+          })
+        }
+        // 构造文章数据
+        //   var leftListTmp = [];
+        //   var rightListTmp = [];
+        //   var imgserver = getApp().globalData.imgserver;
+        //   for (var i = 0;i<res.data.data.length;i++){
+        //     res.data.data[i]["coverUrl"] = imgserver+"/"
+        //     +res.data.data[i].userId +"/"+ res.data.data[i].articleId+"/1.png";
+        //     res.data.data[i]["avatarUrl"] = imgserver+"/"
+        //     +res.data.data[i].userId +"/0/0.png";
+        //     console.log(res.data.data[i].coverUrl);
+        //     if(i%2 == 0)
+        //       rightListTmp.push(res.data.data[i]);
+        //     else
+        //       leftListTmp.push(res.data.data[i]);
+        //     // rightListTmp.push(res.data.data[i+5]);
+        //   }
+        //   that.setData({
+        //       rightList:rightListTmp,
+        //       leftList:leftListTmp
+        //   })
+        //   wx.setStorage({
+        //     key:"articleList",
+        //     data:res.data.data
+        //   })
+        //   setTimeout(function(){
+        //     wx.hideLoading();
+        //     wx.showToast({
+        //       title: '加载中',
+        //       icon: "loading",
+        //     })
+        //   }, 600)
+        // }else if (res.data.code == 7){
+        //   wx.showToast({
+        //     title: '非法访问',
+        //     icon: "error",
+        //   })
+        // }else {
+        //   wx.showToast({
+        //     title: '未知错误',
+        //     icon: "error",
+        //   })
+        // }
+
+      }
+    })
+    // for (var i = 0;i<this.data.leftList.length;i++){
+    //   this.data.leftList[i].time = util.timeStamp2YMD(this.data.leftList[i].timestamp)
+    // }
 
   },
 
