@@ -64,20 +64,20 @@ Page({
           },
           method:"get",
           success(res){
-            // console.log("success")
-            // console.log(res)
+            console.log("success")
+            console.log(res)
             if (res.data.code == 0){
                 getApp().globalData.userInfo = res.data.data;
                 wx.showToast({
-                  title: '登录成功',
-                  icon:"success",
-                  duration: 5000,
-                  success(e){
-                    wx.redirectTo({
-                      url: '/pages/homepage/homepage',
-                    })
-                  }
-                })
+                title: '登录成功',
+                icon:"success",
+                duration: 3000,
+                success(e){
+                  wx.redirectTo({
+                    url: '/pages/homepage/homepage',
+                  })
+                }
+              })
             }
             else if (res.data.code == 6){
               wx.showToast({

@@ -99,16 +99,15 @@ Page({
       })
     } else {
       wx.request({
-        // url: getApp().globalData.server + ":20002/json/user",
-        url:"http:127.0.0.1:8080/1",
+        url: getApp().globalData.server + ":20002/json/user",
         data: {
           user_name: that.data.userName,
           phone: that.data.phoneNumber,
           password: that.data.password,
-          face_url: "123",
+          face_url: getApp().globalData.avatarUrl,
           gender:getApp().globalData.gender ,
-          city: "qq",
-          province: "dd"
+          city: getApp().globalData.city,
+          province: getApp().globalData.province
         },
         header:{
           'content-type':'application/x-www-form-urlencoded'
@@ -118,23 +117,21 @@ Page({
           console.log("success")
           console.log(res)
           if(res.data.code ==0){
-            getApp().globalData.userInfo = res.data.data;
-                wx.showToast({
-                  title: '注册成功',
-                  icon:"success",
-                  duration: 3000,
-                  success(e){
-                    wx.redirectTo({
-                      url: '/pages/login/login',
-                    })
-                  }
+            wx.showToast({
+              title: '注册成功',
+              icon:"success",
+              duration: 3000,
+              success(e){
+                wx.navigateBack({
+                  delta: 1,
                 })
+              }
+            })
           }
           else if (res.data.code == 3) {
             wx.showToast({
               title: '该手机号已注册过',
               icon: "error",
-              duration: 3000
             })
             
           }

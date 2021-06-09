@@ -5,7 +5,7 @@
     <view class="userinfo-all">
       <view class="userInfo-avatar">
         <view class="border">
-          <image src="{{userInfo.avatarUrl}}"></image>
+          <image src="{{userInfo.faceUrl}}"></image>
           <!--照片路径-->
         </view>
       </view>

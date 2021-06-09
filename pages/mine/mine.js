@@ -7,46 +7,8 @@ Page({
   data: {
     userInfo:{},
     loadingHidden:false,
-
-
-    leftList: [
-      // {
-      //   cover: "/Image/icon/bear.jpg",
-      //   title: "描述服务和协议之间的关系 协议可以自由改变；服务一般不变化",
-      //   name: "一只熊w",
-      //   image: "/Image/icon/bear.jpg",
-      //   love: true,
-      //   number: 1234
-      // },
-      // {
-      //   cover: "/Image/icon/bear.jpg",
-      //   title: "是呀",
-      //   name: "一只熊w",
-      //   image: "/Image/icon/bear.jpg",
-      //   love: false,
-      //   number: 123
-      // },
-      // {
-      //   cover: "/Image/icon/bear.jpg",
-      //   title: "描述服务和协议之间的关系 协议可以自由改变；服务一般不变化",
-      //   name: "一只熊w",
-      //   image: "/Image/icon/bear.jpg",
-      //   love: true,
-      //   number: 123
-      // },
-    ],
-
-    rightList: [
-    //   {
-    //   cover: "/Image/icon/bear.jpg",
-    //   title: "描述服务和协议之间的关系 协议可以自由改变；服务一般不变化",
-    //   name: "一只熊w",
-    //   image: "/Image/icon/bear.jpg",
-    //   love: true,
-    //   number: 123,
-
-    // }
-  ],
+    leftList: [],
+    rightList: [],
 
   },
 
@@ -139,10 +101,8 @@ Page({
     wx.request({
       url: getApp().globalData.server + ":20003/json/my_articles",
       data: {
-        // user_id:getApp().globalData.userInfo.userId,
-        // encrypt_code:getApp().globalData.userInfo.password
-        user_id: "4",
-        encrypt_code: "T4mLlqC/Z6Ju27YUIWkMxg=="
+        user_id:getApp().globalData.userInfo.userId,
+        encrypt_code:getApp().globalData.userInfo.password
       },
       method: 'get',
       header: {
@@ -170,13 +130,10 @@ Page({
               }
           }
           console.log(leftListTmp);
-          var userInfo = getApp().globalData.userInfo;
-          userInfo['avatarUrl'] = imgserver+"/"+userInfo.userId+"/0/0.png";
-          
           that.setData({
             rightList: rightListTmp,
             leftList: leftListTmp,
-            userInfo:userInfo,
+            userInfo:getApp().globalData.userInfo,
             loadingHidden:true
           })
           // wx.setStorage({

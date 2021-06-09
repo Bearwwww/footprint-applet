@@ -14,14 +14,14 @@ Page({
   getUserProfile(e) {
     wx.getUserProfile({
       lang: "zh_CN",
-      desc: "用于完善会员资料",
+      desc: "用于完善用户资料",
       success: (res) => {
-        this.setData({
-          userInfo: res.userInfo,
-        })
+        // this.setData({
+        //   userInfo: res.userInfo,
+        // })
         console.log(res);
-        //上传头像
-        //赋值
+        // 全局变量中保存一份
+        getApp().globalData.avatarUrl = res.userInfo.avatarUrl;
         getApp().globalData.gender = res.userInfo.gender;
         getApp().globalData.city = res.userInfo.city;
         getApp().globalData.province = res.userInfo.province;
