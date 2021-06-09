@@ -49,6 +49,7 @@ Page({
   },
 
   publishArticle: function (e) {
+    var that = this;
     // 标题为空
     if (this.data.title == ""){
       wx.showToast({
@@ -73,16 +74,14 @@ Page({
     else {
       // 先上传文章内容
       wx.request({
-        url: getApp().globalData.server + ":20003/json/random_articles",
+        url: getApp().globalData.server + ":20003/json/article",
         data: {
-          // user_id:getApp().globalData.userInfo.userId,
-          // encrypt_code:getApp().globalData.userInfo.password
-          user_id: "4",
-          encrypt_code: "T4mLlqC/Z6Ju27YUIWkMxg==",
-          title:this.data.title,
-          content:this.data.content,
+          user_id:getApp().globalData.userInfo.userId,
+          encrypt_code:getApp().globalData.userInfo.password,
+          title:that.data.title,
+          content:that.data.content,
           timestamp:util.getCurrTimeStamp(),
-          image_num:this.data.imageList.length
+          image_num:that.data.imageList.length
         },
         method: 'post',
         header: {
@@ -90,8 +89,10 @@ Page({
         },
         success(res){
           console.log(res);
-          for (var index = 0; index < this.data.imageList.length; index++)
-            this.uploadImage(index, res.data.data);
+          for (var index = 0; index < that.data.imageList.length; index++){
+            console.log("articleId"+res.data.data+"index:"+index);
+            that.uploadImage(index, res.data.data);
+          }
           wx.showToast({
               title: '发布成功',
               icon: "success",
@@ -113,9 +114,9 @@ Page({
       url: getApp().globalData.server +':20004/image/image',
       formData: ({
         //上传图片所要携带的参数
-        user_id: "4",
-        encrypt_code: 'T4mLlqC/Z6Ju27YUIWkMxg==',
-        article_id: "4",
+        user_id: getApp().globalData.userInfo.userId,
+        encrypt_code: getApp().globalData.userInfo.password,
+        article_id: article_id,
         index: index + 1
       }),
       success: function (res) {
