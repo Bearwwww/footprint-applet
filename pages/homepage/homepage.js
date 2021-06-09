@@ -115,9 +115,9 @@ Page({
               res.data.data[i].userId + "/0/0.png";
             console.log(res.data.data[i].coverUrl);
             if (i % 2 == 0)
-              rightListTmp.push(res.data.data[i]);
+            leftListTmp.push(res.data.data[i]);
             else
-              leftListTmp.push(res.data.data[i]);
+            rightListTmp.push(res.data.data[i]);
             // rightListTmp.push(res.data.data[i+5]);
           }
           that.setData({
