@@ -32,8 +32,8 @@
   <view class="content">
     <view class="left">
       <block wx:for="{{leftList}}" wx:key="index">
-        <image class="pic" src="{{item.coverUrl}}" bindtap="goToDetailPage" mode="widthFix"></image>
-        <view class="title-wrap" bindtap="goToDetailPage">
+        <image class="pic" src="{{item.coverUrl}}" data-index='{{index}}' bindtap="goToDetailPage" mode="widthFix"></image>
+        <view class="title-wrap" data-index='{{index}}' bindtap="goToDetailPage">
           <text>{{item.title}}</text>
         </view>
         <view class="info">
@@ -41,7 +41,7 @@
             <text>{{item.timeStamp}}</text>
           </view>
           <view class="loveNumber">
-            <image class='love' src="{{item.love==true?'/Image/icon/redHeart.png':'/Image/icon/heart.png'}}"
+            <image class='love' src="{{item.isLike==true?'/Image/icon/redHeart.png':'/Image/icon/heart.png'}}"
               bindtap='loveleft' data-index='{{index}}'>
             </image>
             <view class="number">
@@ -54,8 +54,8 @@
 
     <view class="right">
       <block wx:for="{{rightList}}" wx:key="index">
-        <image class="pic" src="{{item.coverUrl}}" bindtap="goToDetailPage" mode="widthFix"></image>
-        <view class="title-wrap" bindtap="goToDetailPage">
+        <image class="pic" src="{{item.coverUrl}}" bindtap="goToDetailPage" data-index='{{index}}' mode="widthFix"></image>
+        <view class="title-wrap" data-index='{{index}}' bindtap="goToDetailPage">
           <text>{{item.title}}</text>
         </view>
         <view class="info">
@@ -63,7 +63,7 @@
             <text>{{item.timeStamp}}</text>
           </view>
           <view class="loveNumber">
-            <image class='love' src="{{item.love==true?'/Image/icon/redHeart.png':'/Image/icon/heart.png'}}"
+            <image class='love' src="{{item.isLike==true?'/Image/icon/redHeart.png':'/Image/icon/heart.png'}}"
               bindtap='loveright' data-index='{{index}}'>
             </image>
             <text class="number">{{item.totalLike}}</text>
