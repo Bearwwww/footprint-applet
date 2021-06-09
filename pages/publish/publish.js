@@ -95,6 +95,7 @@ Page({
           wx.showToast({
               title: '发布成功',
               icon: "success",
+              duration: 5000
           })
           wx.navigateBack({
             delta: 1,
