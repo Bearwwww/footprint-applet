@@ -1,5 +1,6 @@
 <!--pages/mine/mine.wxml-->
 <view class="userInfo">
+<loading hidden="{{loadingHidden}}">加载中...</loading>
   <!-- <block wx:for="{{userInfoList}}" wx:key="index"> -->
     <view class="userinfo-all">
       <view class="userInfo-avatar">

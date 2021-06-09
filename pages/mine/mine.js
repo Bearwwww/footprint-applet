@@ -6,6 +6,7 @@ Page({
    */
   data: {
     userInfo:{},
+    loadingHidden:false,
 
 
     leftList: [
@@ -175,19 +176,20 @@ Page({
           that.setData({
             rightList: rightListTmp,
             leftList: leftListTmp,
-            userInfo:userInfo
+            userInfo:userInfo,
+            loadingHidden:true
           })
           // wx.setStorage({
           //   key: "articleList",
           //   data: res.data.data
           // })
-          setTimeout(function () {
-            wx.hideLoading();
-            wx.showToast({
-              title: '加载中',
-              icon: "loading",
-            })
-          }, 600)
+          // setTimeout(function () {
+          //   wx.hideLoading();
+          //   wx.showToast({
+          //     title: '加载中',
+          //     icon: "loading",
+          //   })
+          // }, 600)
         } else if (res.data.code == 7) {
           wx.showToast({
             title: '非法访问',
