@@ -131,7 +131,7 @@ Page({
               wx.hideToast();
             }, 2000)
           }, 200);
-      
+
         }
         else if (res.data.code == 3) {
           wx.showToast({

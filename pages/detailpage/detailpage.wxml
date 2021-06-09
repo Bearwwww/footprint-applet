@@ -32,4 +32,3 @@
   </view>
 </view>
 <bottom_love class="bottom" totalLikeNum="{{article.totalLike}}" collectNum="{{article.totalLike*2}}" commentNum="{{article.totalLike+124}}" shareNum="{{article.totalLike+324}}"></bottom_love>
-<!-- <include src="/pages/bottom_love/bottom_love.wxml"></include> -->
