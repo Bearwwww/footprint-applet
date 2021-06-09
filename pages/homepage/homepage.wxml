@@ -1,5 +1,6 @@
 <!--pages/homepage/homepage.wxml-->
 <view class="content">
+<loading hidden="{{loadingHidden}}">加载中...</loading>
   <view class="left">
       <block wx:for="{{leftList}}" wx:key="item">
         <image class="pic" src="{{item.coverUrl}}" data-index='{{index}}'  mode="widthFix" bindtap="goToDetailPage"></image>

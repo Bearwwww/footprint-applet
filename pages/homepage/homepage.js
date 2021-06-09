@@ -5,6 +5,7 @@ Page({
    * 页面的初始数据
    */
   data: {
+    loadingHidden: false,
     leftList: null,
     rightList: null,
   },
@@ -121,19 +122,13 @@ Page({
           }
           that.setData({
             rightList: rightListTmp,
-            leftList: leftListTmp
+            leftList: leftListTmp,
+            loadingHidden: true
           })
           wx.setStorage({
             key: "articleList",
             data: res.data.data
           })
-          setTimeout(function () {
-            wx.hideLoading();
-            wx.showToast({
-              title: '加载中',
-              icon: "loading",
-            })
-          }, 600)
         } else if (res.data.code == 7) {
           wx.showToast({
             title: '非法访问',
