@@ -4,17 +4,41 @@ Component({
    * 组件的属性列表
    */
   properties: {
-    totalLike:0,
-    commentNum:0,
-    shareNum:0,
-    collectNum:0
+    totalLikeNum:{
+      type:Number,
+      value:0
+    },
+    commentNum:{
+      type:Number,
+      value:0
+    },
+    shareNum:{
+      type:Number,
+      value:0
+    },
+    collectNum:{
+      type:Number,
+      value:0
+    }
   },
 
   /**
    * 组件的初始数据
    */
   data: {
+    collectNum:0,
+    shareNum:0,
+    commentNum:0,
+    totalLikeNum:0
+  },
 
+  ready:function () {
+    this.setData({
+      collectNum:this.properties.collectNum,
+      shareNum:this.properties.shareNum,
+      commentNum:this.properties.collectNum,
+      totalLikeNum:this.properties.totalLikeNum
+    })
   },
 
   /**

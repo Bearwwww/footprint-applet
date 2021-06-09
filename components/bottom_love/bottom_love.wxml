@@ -14,10 +14,6 @@
   </view>
   <view class="love-view">
     <image class="love-image" src="/Image/icon/love.png"></image>
-    <text class="love-text">{{loveNum}}</text>
+    <text class="love-text">{{totalLikeNum}}</text>
   </view>
-  <!-- <view class="loveNumber">
-      <image class="love" src="{{item.love==true?'/Image/icon/redHeart.png':'/Image/icon/heart.png'}}" bindtap='lovebottom' data-index='{{index}}'></image>
-        <text class="number">{{loveNumber.number}}</text>
-  </view> -->
 </view>

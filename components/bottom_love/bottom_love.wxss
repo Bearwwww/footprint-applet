@@ -15,24 +15,42 @@ image{
 }
 
 .comment-view{
+  display: flex;
+  flex-direction: row;
+  align-items: center;
   flex:6;
   text-align: center;
 }
 
 .share-view{
+  display: flex;
+  flex-direction: row;
+  align-items: center;
   flex: 8;
+  text-align: left;
 }
 
 .collect-view{
+  display: flex;
+  flex-direction: row;
+  align-items: center;
   flex: 8;
-  text-align: right;
+  justify-content: flex-end;
 }
 
 .love-view{
+  display: flex;
+  flex-direction: row;
+  align-items: center;
   flex: 6;
   text-align: center;
-
+  justify-content: flex-end;
 }
+
+.love-text{
+  margin-right: 15rpx;
+}
+
 
 .loveNumber{
   width: auto;
