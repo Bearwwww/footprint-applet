@@ -11,7 +11,8 @@
   flex-direction: column;
   margin: 20rpx;
   overflow: hidden;
-  margin-bottom: 50rpx;
+  padding-bottom: 100rpx;
+  align-items: center;
 }
 .swiper{
   width: 100%;
@@ -19,7 +20,6 @@
 }
 .image-box{
   width: 680rpx;
-  align-items: center;
 }
 .show{
   width: 680rpx;
@@ -30,6 +30,8 @@
   border-radius: 10rpx 10rpx;
 }
 .info{
+  width: 96%;
+  padding-left: 10rpx;
   display: flex;
   flex-direction: row;
   align-items: center;
@@ -49,9 +51,11 @@
   margin-left: 20rpx;
 }
 .text-box{
+  width: 96%;
   display: flex;
   flex-direction: column;
   align-items:flex-start;
+  padding-left: 10rpx;
 
 }
 .title-wrap{
