@@ -6,10 +6,10 @@
   <view class="station">
   </view>
   <view class="comments">
-    <textarea class="articles-wrap" maxlength="500" bindinput="getContent" placeholder='请输入内容！'></textarea>
+    <textarea class="articles-wrap" maxlength="250" bindinput="getContent" placeholder='请输入内容！'></textarea>
   </view>
   <view class="num_comments">
-    <view class="contrast">{{text_num}}/500</view>
+    <view class="contrast">{{text_num}}/250</view>
   </view>
   <view class="station"></view>
   <!-- 上传图片 -->
@@ -23,7 +23,7 @@
     </l-imagePicker>
   </view>
   <view class="prompt">
-    请选择你要发布的照片，最多可上传5张
+    请选择你要发布的照片，最多可上传3张
   </view>
 
   <view class="submit" bindtap="publishArticle">发布</view>
