@@ -1,5 +1,6 @@
 {
   "pages": [
+    "pages/load/load",
     "pages/mine/mine",
     "pages/register/register",
     "pages/detailpage/detailpage",
@@ -9,8 +10,7 @@
     "pages/index/index",
     "pages/logs/logs",
     "pages/homepage/homepage",
-    "pages/publish/publish",
-    "pages/load/load"
+    "pages/publish/publish"
   ],
   "window": {
     "backgroundTextStyle": "light",
