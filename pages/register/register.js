@@ -115,26 +115,31 @@ Page({
         method:"post",
         success(res){
           console.log("success")
-          console.log(res)
-          if(res.data.code ==0){
+        console.log(res)
+        if(res.data.code ==0){
+          setTimeout(() => {
             wx.showToast({
-              title: '注册成功',
-              icon:"success",
-              duration: 3000,
+              title: '提交成功',
+              icon: "success",
               success(e){
-                wx.navigateBack({
-                  delta: 1,
-                })
-              }
-            })
-          }
-          else if (res.data.code == 3) {
-            wx.showToast({
-              title: '该手机号已注册过',
-              icon: "error",
-            })
-            
-          }
+               wx.navigateBack({
+                 delta: 1,
+               })
+                }
+            });
+            setTimeout(() => {
+              wx.hideToast();
+            }, 2000)
+          }, 200);
+      
+        }
+        else if (res.data.code == 3) {
+          wx.showToast({
+            title: '该手机号已注册过',
+            icon: "error",
+          })
+          
+        }
         }
       })
       console.log(that.data)
