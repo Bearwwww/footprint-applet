@@ -226,7 +226,7 @@ Page({
     // 保存当前点击文章在文章数组中真正的下标
     var index;
     // 用户点击右侧文章
-    if (e.detail.x > 231)
+    if (e.detail.x > 176)
       index = e.target.dataset.index * 2 + 1;
     // 用户点击左侧文章
     else
