@@ -13,19 +13,98 @@ Page({
   loveleft: function (e) {
     console.log("love function");
     console.log(e);
+    var that = this;
     var leftListNew = this.data.leftList;
 
     if (leftListNew[e.target.dataset.index].isLike == '1') {
-      leftListNew[e.target.dataset.index].isLike = '0';
-      leftListNew[e.target.dataset.index].totalLike--;
+      wx.request({
+        url: getApp().globalData.server + ":20003/json/dislike",
+        data: {
+          user_id:getApp().globalData.userInfo.userId,
+          encrypt_code:getApp().globalData.userInfo.password,
+          article_id:leftListNew[e.target.dataset.index].articleId
+        },
+        method: 'post',
+        header: {
+          'content-type': 'application/x-www-form-urlencoded'
+        },
+        success(res){
+          console.log(res);
+          if (res.data.code == 0){
+            leftListNew[e.target.dataset.index].isLike = '0';
+            leftListNew[e.target.dataset.index].totalLike--;
+            that.setData({
+              leftList: leftListNew
+            })
+          }else if (res.data.code == 4){
+            wx.showToast({
+              title: '文章不存在',
+              icon:'error'
+            })
+          } else if (res.data.code == 7){
+            wx.showToast({
+              title: '非法访问',
+              icon:'error'
+            })
+          }else{
+            wx.showToast({
+              title: '未知错误',
+              icon:'error'
+            })
+          }      
+        },
+        fail(res){
+          wx.showToast({
+            title: '网络错误',
+            icon:'error'
+          })
+        }
+      })
 
     } else {
-      leftListNew[e.target.dataset.index].isLike = '1';
-      leftListNew[e.target.dataset.index].totalLike++;
+      wx.request({
+        url: getApp().globalData.server + ":20003/json/like",
+        data: {
+          user_id:getApp().globalData.userInfo.userId,
+          encrypt_code:getApp().globalData.userInfo.password,
+          article_id:leftListNew[e.target.dataset.index].articleId
+        },
+        method: 'post',
+        header: {
+          'content-type': 'application/x-www-form-urlencoded'
+        },
+        success(res){
+          if(res.data.code ==0){
+            leftListNew[e.target.dataset.index].isLike = '1';
+            leftListNew[e.target.dataset.index].totalLike++;
+            that.setData({
+              leftList: leftListNew
+            })
+          }else if (res.data.code == 4){
+            wx.showToast({
+              title: '文章不存在',
+              icon:'error'
+            })
+          } else if (res.data.code == 7){
+            wx.showToast({
+              title: '非法访问',
+              icon:'error'
+            })
+          }else{
+            wx.showToast({
+              title: '未知错误',
+              icon:'error'
+            })
+          }     
+        },
+        fail(res){
+          wx.showToast({
+            title: '网络错误',
+            icon:'error'
+          })
+        }
+      })
     }
-    this.setData({
-      leftList: leftListNew
-    })
   },
 
   loveright: function (e) {
