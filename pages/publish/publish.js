@@ -109,7 +109,7 @@ Page({
     wx.uploadFile({
       filePath: that.data.imageList[index],
       name: 'image_content',
-      url: 'http://127.0.0.1:20004/image/article_image',
+      url: getApp().globalData.server +':20004/image/image',
       formData: ({
         //上传图片所要携带的参数
         user_id: "4",
