@@ -1,0 +1,28 @@
+{
+  "name": "Footprint-web",
+  "version": "1.0.0",
+  "description": "项目名称：足迹（Footprint）前端系统",
+  "main": "app.js",
+  "scripts": {
+    "test": "jest"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Bearwwww/footprint-applet.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Bearwwww/footprint-applet/issues"
+  },
+  "homepage": "https://github.com/Bearwwww/footprint-applet#readme",
+  "dependencies": {
+    "lin-ui": "^0.9.4"
+  },
+
+  "devDependencies": {
+    "jest": "^27.0.4",
+    "miniprogram-automator": "^0.10.0"
+  }
+}
