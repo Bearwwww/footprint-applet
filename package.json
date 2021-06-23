@@ -4,7 +4,8 @@
   "description": "项目名称：足迹（Footprint）前端系统",
   "main": "app.js",
   "scripts": {
-    "test": "jest"
+    "test": "jest --watchAll",
+    "coverage":"jest --coverage"
   },
   "repository": {
     "type": "git",
