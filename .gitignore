@@ -13,6 +13,7 @@
 
 node_modules/
 miniprogram_npm/
+coverage/
 
 # Compiled Dynamic libraries
 *.so
