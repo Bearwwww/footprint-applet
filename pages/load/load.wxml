@@ -8,11 +8,11 @@
 <view class="gray-rect"></view>
 
 <view class="text-wrap03">
-    <text>欢迎使用足迹小程序!</text>
+    <text>欢迎使用游记小程序!</text>
 </view>
 
 <view class="text-wrap01">
-    <text>足迹程序想要申请以下权限：</text>
+    <text>游记程序想要申请以下权限：</text>
 </view>
 
 <view class="text-wrap02">

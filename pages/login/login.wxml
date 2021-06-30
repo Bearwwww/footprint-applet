@@ -7,7 +7,7 @@
 </view>
 
 <view class="title-first">
-<text class="text">足迹</text>
+<text class="text">游记</text>
 </view>
 
 <view class="title-second">
@@ -15,15 +15,15 @@
 </view>
 
   <view class="input-first">
-    <input class="inputText" placeholder="请输入手机号" bindinput="getPhoneNumber" placeholder-class="pl-class" />
+    <input class="inputText1" placeholder="请输入手机号" bindinput="getPhoneNumber" placeholder-class="pl-class" />
   </view>
 
   <view class="input-second">
-    <input class="inputText" type="password" placeholder="请输入密码" bindinput="getPassword" placeholder-class="pl-class" />
+    <input class="inputText2" type="password" placeholder="请输入密码" bindinput="getPassword" placeholder-class="pl-class" />
   </view>
 
   <view class="button-first">
-    <button bindtap="login" style="width:100%;">登录</button> <!--做个弹窗-->
+    <button class='login-btn' bindtap="login" style="width:100%;">登录</button> <!--做个弹窗-->
   </view>
 
   <view class="button-second">
