@@ -1,0 +1,78 @@
+{
+  "setting": {},
+  "condition": {
+    "plugin": {
+      "list": []
+    },
+    "game": {
+      "list": []
+    },
+    "gamePlugin": {
+      "list": []
+    },
+    "miniprogram": {
+      "list": [
+        {
+          "name": "pages/mine/mine",
+          "pathName": "pages/mine/mine",
+          "query": "",
+          "scene": null
+        },
+        {
+          "name": "pages/register/register",
+          "pathName": "pages/register/register",
+          "query": "",
+          "scene": null
+        },
+        {
+          "name": "pages/publish/publish",
+          "pathName": "pages/publish/publish",
+          "query": "",
+          "scene": null
+        },
+        {
+          "name": "pages/login/login",
+          "pathName": "pages/login/login",
+          "query": "",
+          "scene": null
+        },
+        {
+          "name": "pages/homepage/homepage",
+          "pathName": "pages/homepage/homepage",
+          "query": "",
+          "scene": null
+        },
+        {
+          "name": "pages/bottom_menu/bottom_menu",
+          "pathName": "pages/bottom_menu/bottom_menu",
+          "query": "",
+          "scene": null
+        },
+        {
+          "name": "pages/detailpage/detailpage",
+          "pathName": "pages/detailpage/detailpage",
+          "query": "",
+          "scene": null
+        },
+        {
+          "name": "pages/load/load",
+          "pathName": "pages/load/load",
+          "query": "",
+          "scene": null
+        },
+        {
+          "name": "pages/bottom_love/bottom_love",
+          "pathName": "pages/bottom_love/bottom_love",
+          "query": "",
+          "scene": null
+        },
+        {
+          "name": "pages/logs/logs",
+          "pathName": "pages/logs/logs",
+          "query": "",
+          "scene": null
+        }
+      ]
+    }
+  }
+}
