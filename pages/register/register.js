@@ -47,6 +47,7 @@ Page({
 
   //注册状态判断
   register: function (e) {
+    console.log(getApp().globalData.province)
     var that = this;
     if (that.data.userName == '') {
       wx.showModal({
@@ -98,6 +99,7 @@ Page({
         success(res) {}
       })
     } else {
+     
       wx.request({
         url: getApp().globalData.server + ":20002/json/user",
         data: {

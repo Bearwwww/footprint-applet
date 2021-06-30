@@ -292,9 +292,10 @@ Page({
         
               articleList[i].timeStamp = util.timeStamp2YMD(articleList[i].timeStamp);
               if (i % 2 == 0) {
-                rightListTmp.push(articleList[i]);
-              } else {
                 leftListTmp.push(articleList[i]);
+
+              } else {
+                rightListTmp.push(articleList[i]);
               }
           }
           console.log(leftListTmp);

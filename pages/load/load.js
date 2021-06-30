@@ -1,6 +1,12 @@
 // pages/load/load.js
 Page({
 
+  // "jest": {
+  //   "testMatch": [
+  //     "/pages/load/load.test.js"
+  //   ]
+  // },
+
   /**
    * 页面的初始数据
    */

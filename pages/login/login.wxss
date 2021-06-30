@@ -51,7 +51,14 @@
   width: 92%;
 }
 
-.inputText {
+.inputText1 {
+  background-color: rgb(242, 242, 242);
+  width: 92%;
+  height: 80rpx;
+  padding-left: 40rpx;
+}
+
+.inputText2 {
   background-color: rgb(242, 242, 242);
   width: 92%;
   height: 80rpx;
