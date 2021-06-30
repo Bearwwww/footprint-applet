@@ -2,7 +2,7 @@
 <view class="menu">
 
   <view class="left-bottom">
-    <text bindtap="goToHomePage">足迹广场</text>
+    <text bindtap="goToHomePage">游记广场</text>
   </view>
 
   <view class="center">
